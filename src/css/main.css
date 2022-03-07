@@ -1,0 +1,22 @@
+:root {
+
+    --primary-color: #bb0a21;
+    --secondary-color: #dc851f;
+    --black: #1e1e24;
+    --white: #fffcf9;
+  
+    /* fonts */
+
+    /* font sizes */
+
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    background-color: var(--black);
+    color: var(--white);
+}
