@@ -31,8 +31,16 @@ h1,h2,h3,h4,h5,h6{
 
 .btn{
     background-color: var(--primary-color);
+    border-radius: 5px;
+    color: var(--white);
     padding: 0.6em 1.75em;
+    width: 100px;
+    transition: all .2s ease-in-out;
     cursor: pointer;
+}
+
+.btn:hover{
+    transform: scale(1.1);
 }
 
 /* for responsive containers */
@@ -70,19 +78,33 @@ h1,h2,h3,h4,h5,h6{
 }} */
 
 /* for navbar */
-.navbar{
+.navbar-container{
+    padding: 10px 50px;
     border-bottom: 2px solid var(--secondary-color);
-    text-align: right;
+    clear: both;
+    overflow: auto;
+}
+
+.logo img{
+ float:left;
+}
+
+ .navbar{
+float: right;
 }
 
 .navbar ul{
     list-style-type: none;
 }
 
-.navbar-link{
-    color: white;
+.navbar-link, .navbar-link-btn{
+    color: var(--white);
     text-decoration: none;
-    margin: 20px;
+    margin-left: 20px;
+}
+
+.navbar-link:hover, .navbar-link:active{
+    color: #b1b1b1;
 }
 
 .navbar li {
