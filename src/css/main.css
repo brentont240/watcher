@@ -29,19 +29,21 @@ h1,h2,h3,h4,h5,h6{
     font-family: var(--font-heading);
 }
 
+.btn{
+    background-color: var(--primary-color);
+    padding: 0.6em 1.75em;
+    cursor: pointer;
+}
 
 /* for responsive containers */
 
-/* .container{
-    width:100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-
+.container{
+    margin: auto;
+    max-width: 1320px;
 }
 
-@media (min-width: 1400px){
+
+/* @media (min-width: 1400px){
 .container {
     max-width: 1320px;
 }}
@@ -66,3 +68,25 @@ h1,h2,h3,h4,h5,h6{
 .container {
     max-width: 540px;
 }} */
+
+/* for navbar */
+.navbar{
+    border-bottom: 2px solid var(--secondary-color);
+    text-align: right;
+}
+
+.navbar ul{
+    list-style-type: none;
+}
+
+.navbar-link{
+    color: white;
+    text-decoration: none;
+    margin: 20px;
+}
+
+.navbar li {
+    display: inline-block;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
