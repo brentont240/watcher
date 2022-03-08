@@ -1,0 +1,74 @@
+{
+    "movies": [
+      {
+        "id": "0",
+        "name": "Interstellar",
+        "url": "https://something",
+        "Desc": "Best movie ever made",
+        "Rate": "5",
+        "year": "20??",
+        "time": "2hr ?min",
+        "genre": "Sci-Fi"
+      },
+      {
+        "id": "1",
+        "name": "Tenet",
+        "url": "https://something",
+        "Desc": "Best movie ever made",
+        "Rate": "5",
+        "year": "20??",
+        "time": "2hr ?min",
+        "genre": "Sci-Fi"
+      },
+      {
+        "id": "2",
+        "name": "The Prestige",
+        "url": "https://something",
+        "Desc": "Movie about magic",
+        "Rate": "5",
+        "year": "20??",
+        "time": "2hr ?min",
+        "genre": "Sci-Fi"
+      },
+      {
+        "id": "3",
+        "name": "Batman",
+        "url": "https://something",
+        "Desc": "Where's Rachel?",
+        "Rate": "5",
+        "year": "20??",
+        "time": "2hr ?min",
+        "genre": "Sci-Fi"
+      }
+    ],
+    "users": [
+      {
+        "id": "0",
+        "name": "Johnny Appleseed",
+        "password": "password",
+        "watchlist": [
+          {
+            "id": "0"
+          },
+          {
+            "id": "1"
+          }
+        ],
+        "admin": false
+      },
+      {
+        "id": "1",
+        "name": "King Arthur",
+        "password": "Excalibur",
+        "watchlist": [
+          {
+            "id": "0"
+          },
+          {
+            "id": "1"
+          }
+        ],
+        "admin": true
+      }
+    ]
+  }
