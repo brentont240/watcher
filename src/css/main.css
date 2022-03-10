@@ -61,6 +61,14 @@ h1,h2,h3,h4,h5,h6{
     background-color: var(--primary-color-darker);
 }
 
+.rating{
+ color: var(--secondary-color);
+ font-size: 1.5em;
+}
+
+hr.primary-hr{
+    border: 1px dashed var(--primary-color);
+}
 
 /* for responsive containers */
 
