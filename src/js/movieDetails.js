@@ -11,7 +11,8 @@ export default class movieDetails{
     // look at ways to include more red into this!
     renderMovieDetails(){
       return `<section class="movie-details center-text">
-        <h1>${this.movie.name}</h1>
+        <h1 class="movie-title-details">${this.movie.name}</h1>
+        <hr>
         <img src="" alt="">
         <p class="rating">${this.starRating}</p>
         <p class="description">${this.movie.Desc}</p>
