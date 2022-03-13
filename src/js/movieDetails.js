@@ -12,7 +12,6 @@ export default class movieDetails{
     renderMovieDetails(){
       return `<section class="movie-details center-text">
         <h1 class="movie-title-details">${this.movie.name}</h1>
-        <hr>
         <img src="" alt="">
         <p class="rating">${this.starRating}</p>
         <p class="description">${this.movie.Desc}</p>
