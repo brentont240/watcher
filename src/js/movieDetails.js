@@ -10,26 +10,21 @@ export default class movieDetails{
 
     // look at ways to include more red into this!
     renderMovieDetails(){
-<<<<<<< HEAD
+      // TODO: add a "add to watchlist" button if the user is logged in
+      // something like this: <button class="btn">&#9547;  &nbsp;Add to Watchlist</button>
       return `<section class="movie-details center-text container">
-        <h1 class="movie-title">${this.movie.name}</h1>
-        <p>${this.movie.year} | ${this.movie.time} | ${this.movie.genre}</p>
+        <h1 class="movie-details-title">${this.movie.name}</h1>
+        <hr class="hr-primary-fade">
+        <p>${this.movie.year} &#9474; ${this.movie.time} &#9474; ${this.movie.genre}</p>
         <div class="row">
           <div class="column">
-            <img src="https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg" class="details-img" alt="${this.movie.name}">
+            <img src="${this.movie.imgUrl}" class="details-img" alt="${this.movie.name}">
           </div>
           <div class="column left-text details-box-shadow details-box">
             <p class="rating">Rating: ${this.starRating}</p>
             <p class="description">${this.movie.Desc}</p>
           </div>
         </div>
-=======
-      return `<section class="movie-details center-text">
-        <h1 class="movie-title-details">${this.movie.name}</h1>
-        <img src="" alt="">
-        <p class="rating">${this.starRating}</p>
-        <p class="description">${this.movie.Desc}</p>
->>>>>>> 7f4d741a3db92c92f8aaf140fe9dbc7dda439707
       </section>
       `;
     }
@@ -55,14 +50,13 @@ export default class movieDetails{
       this.movie = {
         "id": "0",
         "name": "Interstellar",
-        "url": "https://something",
+        "imgUrl": "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
         "Desc": "Best movie ever made",
         "Rate": "5",
         "year": "2014",
         "time": "2hr 49min",
         "genre": "Sci-Fi"
       };
-
       this.getStarRating();
       document.querySelector("main").innerHTML = this.renderMovieDetails();
     }

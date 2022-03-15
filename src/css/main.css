@@ -70,8 +70,17 @@ h1,h2,h3,h4,h5,h6{
  font-size: 1.5em;
 }
 
-.movie-title{
-    font-size: 2.5em;
+.movie-details-title{
+    font-size: 2.7em;
+    font-weight: 400;
+}
+
+/* an hr that fades and uses the primary color */
+.hr-primary-fade{
+    margin-top: -20px;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgb(187, 10, 33, 0), rgba(187, 10, 33, 0.75), rgba(187, 10, 33, 0));
 }
 
 /* for responsive containers */
@@ -123,14 +132,20 @@ h1,h2,h3,h4,h5,h6{
     box-shadow: 0 0 10px 5px var(--primary-color);
   }
 
+  /* for movie details page */
   @media screen and (max-width: 800px){
-    /* change the flex direction on smaller screens */
+    /* change the flex direction on smaller screens and add less top margin */
     .row{
         flex-direction: column;
+        margin-top: 10px;
     }
     /* add a top margin to the details box on smaller screens  */
     .details-box{
-        margin-top: 10px;
+        margin-top: 20px;
+    }
+    /* make the font size smaller */
+    .movie-details-title{
+        font-size: 2em;
     }
 }
 
@@ -178,8 +193,4 @@ float: right;
       margin-top: auto;
       padding-bottom: .75em;
       padding-top: .75em;
-  }
-
-  .movie-title-details{
-      font-size: 2em;
   }
