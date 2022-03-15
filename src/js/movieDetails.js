@@ -10,6 +10,7 @@ export default class movieDetails{
 
     // look at ways to include more red into this!
     renderMovieDetails(){
+<<<<<<< HEAD
       return `<section class="movie-details center-text container">
         <h1 class="movie-title">${this.movie.name}</h1>
         <p>${this.movie.year} | ${this.movie.time} | ${this.movie.genre}</p>
@@ -22,6 +23,13 @@ export default class movieDetails{
             <p class="description">${this.movie.Desc}</p>
           </div>
         </div>
+=======
+      return `<section class="movie-details center-text">
+        <h1 class="movie-title-details">${this.movie.name}</h1>
+        <img src="" alt="">
+        <p class="rating">${this.starRating}</p>
+        <p class="description">${this.movie.Desc}</p>
+>>>>>>> 7f4d741a3db92c92f8aaf140fe9dbc7dda439707
       </section>
       `;
     }
