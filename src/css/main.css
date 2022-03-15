@@ -72,6 +72,44 @@ h1,h2,h3,h4,h5,h6{
     width: calc(100% - 1rem); 
     margin: auto;
 }
+.awesome-form
+{
+    position: relative;
+    margin-left: 20%;
+    margin-right:20%;
+}
+.awesome-form input{
+	width: 60%;
+    background: transparent;
+    outline: none;
+    border: 0;
+    border-bottom: 1px solid var(--white);
+    justify-content: center;
+    font-family: var(--font-body);
+    font-size: large;
+    margin-bottom: 20px;
+}
+.awesome-form button{
+    width: 30%;
+	height: 40px;
+	margin: 10px auto;
+	justify-content: center;
+	display: block;
+	color: var(--black);
+	background: var(--white);
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 20px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
+}
+.awesome-form-container
+{
+}
+
 
 @media screen and (max-width: 1380px){
     /* add some padding on smaller screens */

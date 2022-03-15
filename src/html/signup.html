@@ -3,22 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <title>Sign Up</title>
+    <script src="../js/main.js" type="module"></script>
 </head>
 <body>
-    <form action="action_page.php" style="border:1px solid #ccc">
-        <div class="container">
-          <h1>Sign Up</h1>
-          <hr>
-          <input type="text" placeholder="Email" name="email" required>
+  <header id="main-header"></header>
+    <form class = "awesome-form"action="action_page.php" style="border:1px solid #ccc">
+        <div class="awesome-form-container">
+          <input id = "email" type="text" placeholder="Email" name="email" required>
       
           <input type="password" placeholder="Password" name="psw" required>
           <input type="password" placeholder="Confirm Password" name="psw-repeat" required>
-      
           <div class="submit-button">
             <button type="submit" class="signupbtn">Sign Up</button>
           </div>
-        </div>
       </form>
+    </div>
+      <footer id="main-footer"></footer>
 </body>
 </html>
