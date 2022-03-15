@@ -45,6 +45,10 @@ h1,h2,h3,h4,h5,h6{
     text-align: center;
 }
 
+.left-text{
+    text-align: left;
+}
+
 .btn{
     font-size: var(--body-size);
     background-color: var(--primary-color);
@@ -66,8 +70,8 @@ h1,h2,h3,h4,h5,h6{
  font-size: 1.5em;
 }
 
-hr.primary-hr{
-    border: 1px dashed var(--primary-color);
+.movie-title{
+    font-size: 2.5em;
 }
 
 /* for responsive containers */
@@ -92,6 +96,41 @@ hr.primary-hr{
     /* add less padding on mobile screens */
     .container{
         padding: 0px 20px;
+    }
+}
+
+
+/* for rows and columns */
+
+.row {
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  
+  .column {
+    flex: 50%;
+    padding: 10px;
+  }
+
+  .details-img{
+      width: 300px;
+  }
+
+  .details-box-shadow{
+    border-radius: 8px;
+    padding-left: 20px;
+    box-shadow: 0 0 10px 5px var(--primary-color);
+  }
+
+  @media screen and (max-width: 800px){
+    /* change the flex direction on smaller screens */
+    .row{
+        flex-direction: column;
+    }
+    /* add a top margin to the details box on smaller screens  */
+    .details-box{
+        margin-top: 10px;
     }
 }
 

@@ -10,11 +10,18 @@ export default class movieDetails{
 
     // look at ways to include more red into this!
     renderMovieDetails(){
-      return `<section class="movie-details center-text">
-        <h1>${this.movie.name}</h1>
-        <img src="" alt="">
-        <p class="rating">${this.starRating}</p>
-        <p class="description">${this.movie.Desc}</p>
+      return `<section class="movie-details center-text container">
+        <h1 class="movie-title">${this.movie.name}</h1>
+        <p>${this.movie.year} | ${this.movie.time} | ${this.movie.genre}</p>
+        <div class="row">
+          <div class="column">
+            <img src="https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg" class="details-img" alt="${this.movie.name}">
+          </div>
+          <div class="column left-text details-box-shadow details-box">
+            <p class="rating">Rating: ${this.starRating}</p>
+            <p class="description">${this.movie.Desc}</p>
+          </div>
+        </div>
       </section>
       `;
     }
@@ -37,14 +44,14 @@ export default class movieDetails{
       // this.movie = await this.dataSource.findMovieById(this.movieId);
 
       // testing
-      this.movie =       {
+      this.movie = {
         "id": "0",
         "name": "Interstellar",
         "url": "https://something",
         "Desc": "Best movie ever made",
         "Rate": "5",
-        "year": "20??",
-        "time": "2hr ?min",
+        "year": "2014",
+        "time": "2hr 49min",
         "genre": "Sci-Fi"
       };
 
