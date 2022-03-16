@@ -132,3 +132,20 @@ float: right;
       padding-bottom: .75em;
       padding-top: .75em;
   }
+
+.movie-card{
+ 
+}
+.movie-img{
+    float: left;
+    padding: 20px;
+}
+.name{
+    padding: 20px;
+}
+.genre{
+    padding: 10px;
+}
+.desc{
+    padding: 20px;
+}
