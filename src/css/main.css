@@ -134,18 +134,33 @@ float: right;
   }
 
 .movie-card{
+ display: grid;
+ grid-template-columns: .5fr 1fr;
+ width: 350px;
+ gap: 10px;
+ border: 5px solid #8f081a;
+}
+
+.movie-img{
+    grid-column: 1/2;
+    width: 130px;
+    margin: 5px;
+}
+.movie-text{
  
 }
-.movie-img{
-    float: left;
-    padding: 20px;
+a {
+    text-decoration: none;
 }
 .name{
-    padding: 20px;
+    color: white;
+}
+.name:visited{
+}
+.name:hover{
+    color: #8f081a;
 }
 .genre{
-    padding: 10px;
 }
 .desc{
-    padding: 20px;
 }
