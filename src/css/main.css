@@ -9,7 +9,7 @@
   
     /* fonts */
     --font-body: 'Roboto', 'Open Sans', Arial, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    --font-heading: 'Nanum Gothic', 'open sans', "Arial Narrow Bold", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-heading: 'Nanum Gothic', "Arial Narrow Bold", 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     /* font sizes */
     --body-size: 1.15rem;
 }
@@ -45,6 +45,10 @@ h1,h2,h3,h4,h5,h6{
     text-align: center;
 }
 
+.left-text{
+    text-align: left;
+}
+
 .btn{
     font-size: var(--body-size);
     background-color: var(--primary-color);
@@ -61,6 +65,23 @@ h1,h2,h3,h4,h5,h6{
     background-color: var(--primary-color-darker);
 }
 
+.rating{
+ color: var(--secondary-color);
+ font-size: 1.5em;
+}
+
+.movie-details-title{
+    font-size: 2.7em;
+    font-weight: 400;
+}
+
+/* an hr that fades and uses the primary color */
+.hr-primary-fade{
+    margin-top: -20px;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgb(187, 10, 33, 0), rgba(187, 10, 33, 0.75), rgba(187, 10, 33, 0));
+}
 
 /* for responsive containers */
 
@@ -140,6 +161,47 @@ input, select, textarea{
     /* add less padding on mobile screens */
     .container{
         padding: 0px 20px;
+    }
+}
+
+
+/* for rows and columns */
+
+.row {
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  
+  .column {
+    flex: 50%;
+    padding: 10px;
+  }
+
+  .details-img{
+      width: 300px;
+  }
+
+  .details-box-shadow{
+    border-radius: 8px;
+    padding-left: 20px;
+    box-shadow: 0 0 10px 5px var(--primary-color);
+  }
+
+  /* for movie details page */
+  @media screen and (max-width: 800px){
+    /* change the flex direction on smaller screens and add less top margin */
+    .row{
+        flex-direction: column;
+        margin-top: 10px;
+    }
+    /* add a top margin to the details box on smaller screens  */
+    .details-box{
+        margin-top: 20px;
+    }
+    /* make the font size smaller */
+    .movie-details-title{
+        font-size: 2em;
     }
 }
 
