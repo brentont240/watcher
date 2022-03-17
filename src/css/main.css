@@ -9,7 +9,7 @@
   
     /* fonts */
     --font-body: 'Roboto', 'Open Sans', Arial, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    --font-heading: 'Nanum Gothic', 'open sans', "Arial Narrow Bold", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-heading: 'Nanum Gothic', "Arial Narrow Bold", 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     /* font sizes */
     --body-size: 1.15rem;
 }
