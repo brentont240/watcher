@@ -23,7 +23,7 @@ export default class movieDetails{
           <div class="column left-text details-box-shadow details-box">
             <p class="rating">Rating: ${this.starRating}</p>
             <p class="description">${this.movie.Desc}</p>
-            <button class="btn">&#9547; &nbsp;Add to Watchlist</button>
+            <button class="watchlist-btn">&#9547; &nbsp;Add to Watchlist</button>
           </div>
         </div>
       </section>
