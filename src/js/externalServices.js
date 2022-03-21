@@ -1,3 +1,7 @@
+import MovieCard from "./movieCard.js";
+
+const movie = new MovieCard;
+
 function convertToJson(res) {
     let jsonResponse = res.json();
     if (res.ok) {
@@ -9,8 +13,17 @@ function convertToJson(res) {
 
 export default class ExternalServices {
     constructor() {}
-    getData() {
+    async getData() {
         console.log('made it to get data');
-        return fetch("../dummy_movies.json").then(convertToJson).then(data => data)
+        let movie_data = await fetch("../dummy_movies.json").then(convertToJson).then((data) => data);
+        movie.movieGenerator(movie_data);
     }
+
+    // function to grab one movie
+
+    // function to handle the search
+
+    // function to login
+
+    // functions to update, create, and retrieve a watchlist
 }
