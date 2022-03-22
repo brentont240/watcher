@@ -7,15 +7,9 @@ export default class MovieCard {
     }
 
     movieCardTemplate(movie) {
+        // one movie is passed in and this function generates html for that movie.
         console.log("made it to movie data");
-        // console.log(movie);
-        // console.log(movie.movies[1].name);
-        
-        // console.log(movie.movies);
-        // i need to pass in one movie
         let card = document.createElement("div");
-        // document.querySelector(".movies");
-
         card.innerHTML = `<div class="movie-card">
         <a href="signup.html"> <img class="movie-img" alt="movie art" src="../interstellar.jpeg"></a>
         <div class="movie-text">
@@ -40,5 +34,4 @@ export default class MovieCard {
             this.movieCardTemplate(movie);
         })
     }
-    // It will need all of the movie data and call movie card template
 }
