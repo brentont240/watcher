@@ -3,8 +3,8 @@
       {
         "id": "0",
         "name": "Interstellar",
-        "url": "https://something",
-        "Desc": "Best movie ever made",
+        "url": "../interstellar.jpeg",
+        "Desc": "Best movie ever made. Did you know that Christopher Nolan acutally grew 500 acres of corn for the film?",
         "Rate": "5",
         "year": "20??",
         "time": "2hr ?min",
@@ -13,7 +13,7 @@
       {
         "id": "1",
         "name": "Tenet",
-        "url": "https://something",
+        "url": "../interstellar.jpeg",
         "Desc": "Best movie ever made",
         "Rate": "5",
         "year": "20??",
@@ -23,7 +23,7 @@
       {
         "id": "2",
         "name": "The Prestige",
-        "url": "https://something",
+        "url": "../interstellar.jpeg",
         "Desc": "Movie about magic",
         "Rate": "5",
         "year": "20??",
@@ -33,8 +33,48 @@
       {
         "id": "3",
         "name": "Batman",
-        "url": "https://something",
+        "url": "../interstellar.jpeg",
         "Desc": "Where's Rachel?",
+        "Rate": "5",
+        "year": "20??",
+        "time": "2hr ?min",
+        "genre": "Sci-Fi"
+      },
+      {
+        "id": "4",
+        "name": "Dunkirk",
+        "url": "../interstellar.jpeg",
+        "Desc": "havnt seen it yet",
+        "Rate": "5",
+        "year": "20??",
+        "time": "2hr ?min",
+        "genre": "Sci-Fi"
+      },
+      {
+        "id": "5",
+        "name": "The dark knight",
+        "url": "../interstellar.jpeg",
+        "Desc": "Joker",
+        "Rate": "5",
+        "year": "20??",
+        "time": "2hr ?min",
+        "genre": "Sci-Fi"
+      },
+      {
+        "id": "6",
+        "name": "Inception",
+        "url": "../interstellar.jpeg",
+        "Desc": "\"We are the dreamers of the dream.\"",
+        "Rate": "5",
+        "year": "20??",
+        "time": "2hr ?min",
+        "genre": "Sci-Fi"
+      },
+      {
+        "id": "7",
+        "name": "The dark knight rises",
+        "url": "../interstellar.jpeg",
+        "Desc": "Redemption",
         "Rate": "5",
         "year": "20??",
         "time": "2hr ?min",
