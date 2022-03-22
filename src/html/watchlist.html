@@ -7,40 +7,13 @@
     <link rel="stylesheet" href="../css/main.css">
     <title>Watcher</title>
     <script src="../js/main.js" type="module"></script>
+    <script src="../js/loadWatchlist.js" type="module"></script>
 </head>
 <body>
     <header id="main-header"></header>
     <main class="container">
         <h1 class="center-text">Watchlist</h1>
-        <div class="watchlist">
-            <!-- TODO: PUT THIS INTO THE JAVASCRIPT -->
-            <div class="watchlist-item">
-                <img src="https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg" alt="" class="watchlist-img">    
-                <div>
-                    <h3>Movie title</h3>
-                    <p>Last watched: ----</p>
-                    <button class="watchlist-btn">&#9472; &nbsp;Remove from list</button>
-                </div>      
-            </div>
-            <!-- ADDED A SECOND ONE JUST TO SEE WHAT MULTIPLE WOULD LOOK LIKE -->
-            <div class="watchlist-item">
-                <img src="https://upload.wikimedia.org/wikipedia/en/e/e7/Jurassic_Park_poster.jpg" alt="" class="watchlist-img">    
-                <div>
-                <h3>Movie title</h3>
-                <p>Last watched: ----</p>
-                <button class="watchlist-btn">&#9472; &nbsp;Remove from list</button>
-                </div>      
-            </div>
-            <!-- remove this third one as well -->
-            <div class="watchlist-item">
-                <img src="https://cdn.pastemagazine.com/www/blogs/lists/1990.jpg" alt="" class="watchlist-img">    
-                <div>
-                    <h3>Movie title</h3>
-                    <p>Last watched: ----</p>
-                    <button class="watchlist-btn">&#9472; &nbsp;Remove from list</button>
-                </div>      
-            </div>
-        </div>
+        <div id="watchlist-section"></div>   
     </main>
     <footer id="main-footer"></footer>
 </body>

@@ -153,7 +153,7 @@ h1,h2,h3,h4,h5,h6{
 
 .watchlist{
     border-top: 1px solid var(--primary-color);
-    margin-bottom: 50px;
+    margin-bottom: 25px;
 }
 
 .watchlist-item{
@@ -170,6 +170,12 @@ h1,h2,h3,h4,h5,h6{
 
 .watchlist-details{
 
+}
+
+.clear-watchlist-container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
 }
 
 .watchlist-btn{
