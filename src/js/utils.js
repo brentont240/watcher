@@ -32,4 +32,6 @@ export async function loadHeaderFooter() {
     const footer = document.getElementById("main-footer");
     renderWithTemplate(head, header);
     renderWithTemplate(foot, footer);
+    document.querySelector(".year").innerHTML = new Date().getFullYear();
+
 }

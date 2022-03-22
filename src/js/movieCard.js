@@ -8,7 +8,6 @@ export default class MovieCard {
 
     movieCardTemplate(movie) {
         // one movie is passed in and this function generates html for that movie.
-        console.log("made it to movie data");
         let card = document.createElement("div");
         card.innerHTML = `<div class="movie-card">
         <a href="signup.html"> <img class="movie-img" alt="movie art" src="../interstellar.jpeg"></a>
