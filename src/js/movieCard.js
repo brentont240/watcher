@@ -14,7 +14,7 @@ export default class MovieCard {
         <div class="movie-text">
             <a href="signup.html"> <p class="name">${movie.name}</p> </a>
             <p class="genre">${movie.genre}</p>
-            <p class="desc">${movie.Desc}</p>
+            <p class="desc">${movie.desc}</p>
         </div>
         </div>   `;
         let list = document.querySelector(".movies");
