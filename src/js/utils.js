@@ -1,4 +1,3 @@
-
 // converts the response to text
 function convertToText(res) {
     if (res.ok) {
