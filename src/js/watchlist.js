@@ -14,7 +14,7 @@ this.movielist.forEach( movie => {
     <img src="${movie.imageUrl}" alt="${movie.title}" class="watchlist-img">    
     <div>
         <h3>${movie.title}</h3>
-        <p>Put stuff here!</p>
+        <p>${movie.details}</p>
         <button class="watchlist-btn">&#9472; &nbsp;Remove from list</button>
     </div>      
 </div>
