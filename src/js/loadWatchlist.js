@@ -17,7 +17,7 @@ const testList = [
     title: "National Treasure",
     imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/1/12/Movie_national_treasure.JPG/220px-Movie_national_treasure.JPG"
 }
-]
+];
 
 const renderArea = document.querySelector("#watchlist-section");
 

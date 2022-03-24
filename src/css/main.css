@@ -57,6 +57,8 @@ h1,h2,h3,h4,h5,h6{
     color: var(--white);
     padding: 0.55em 1.5em;
     transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
     cursor: pointer;
 }
 
@@ -224,10 +226,6 @@ input, select, textarea{
     width: 150px;
 }
 
-.watchlist-details{
-
-}
-
 .clear-watchlist-container{
     display: flex;
     justify-content: center;
@@ -242,6 +240,8 @@ input, select, textarea{
     color: var(--white);
     padding: 0.5em 1em;
     transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
     cursor: pointer;
 }
 
