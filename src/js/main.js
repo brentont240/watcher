@@ -4,4 +4,3 @@ import { loadHeaderFooter } from "./utils.js";
 const data = new ExternalServices
 loadHeaderFooter();
 data.getData();
-
