@@ -277,18 +277,17 @@ float: right;
 .movie-card{
  display: grid;
  grid-template-columns: .5fr 1fr;
- width: 350px;
+ width: 280px;
  gap: 10px;
  border: 5px solid #8f081a;
+ margin: 1em;
+ 
 }
 
 .movie-img{
     grid-column: 1/2;
-    width: 130px;
+    width: 100px;
     margin: 5px;
-}
-.movie-text{
- 
 }
 a {
     text-decoration: none;
@@ -296,12 +295,22 @@ a {
 .name{
     color: white;
 }
-.name:visited{
-}
+
 .name:hover{
     color: #8f081a;
 }
+.movies{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    list-style-type: none;
+}
 .genre{
+    font-size: .8em;
 }
 .desc{
+    font-size: .7em;
+    max-height: 45px;
+    overflow: hidden;
+    /* text-overflow: ellipsis " [..]"; */
 }

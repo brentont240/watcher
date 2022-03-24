@@ -8,14 +8,13 @@ export default class MovieCard {
 
     movieCardTemplate(movie) {
         // one movie is passed in and this function generates html for that movie.
-        console.log("made it to movie data");
         let card = document.createElement("div");
         card.innerHTML = `<div class="movie-card">
-        <a href="signup.html"> <img class="movie-img" alt="movie art" src="../interstellar.jpeg"></a>
+        <a href="signup.html"> <img class="movie-img" alt="movie art" src="${movie.url}"></a>
         <div class="movie-text">
             <a href="signup.html"> <p class="name">${movie.name}</p> </a>
             <p class="genre">${movie.genre}</p>
-            <p class="desc">${movie.Desc}</p>
+            <p class="desc">${movie.desc}</p>
         </div>
         </div>   `;
         let list = document.querySelector(".movies");
@@ -31,6 +30,7 @@ export default class MovieCard {
             movie.id = item.id;
             movie.genre = item.genre;
             movie.desc = item.Desc;
+            movie.url = item.url;
             this.movieCardTemplate(movie);
         })
     }
