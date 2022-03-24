@@ -10,7 +10,7 @@ export default class movieDetails{
 
     // look at ways to include more red into this!
     renderMovieDetails(){
-      // TODO: add a "add to watchlist" button if the user is logged in
+           // TODO: add a "add to watchlist" button if the user is logged in
       // something like this: <button class="btn">&#9547;  &nbsp;Add to Watchlist</button>
       return `<section class="movie-details center-text container">
         <h1 class="movie-details-title">${this.movie.name}</h1>
@@ -23,6 +23,7 @@ export default class movieDetails{
           <div class="column left-text details-box-shadow details-box">
             <p class="rating">Rating: ${this.starRating}</p>
             <p class="description">${this.movie.Desc}</p>
+            <button class="watchlist-btn">&#9547; &nbsp;Add to Watchlist</button>
           </div>
         </div>
       </section>
@@ -57,6 +58,7 @@ export default class movieDetails{
         "time": "2hr 49min",
         "genre": "Sci-Fi"
       };
+
       this.getStarRating();
       document.querySelector("main").innerHTML = this.renderMovieDetails();
     }
