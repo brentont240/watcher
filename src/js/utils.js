@@ -35,3 +35,10 @@ export async function loadHeaderFooter() {
     document.querySelector(".year").innerHTML = new Date().getFullYear();
 
 }
+
+export function getParams(param) {
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const params = urlParams.get(param);
+  return params;
+}

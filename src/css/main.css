@@ -57,6 +57,8 @@ h1,h2,h3,h4,h5,h6{
     color: var(--white);
     padding: 0.55em 1.5em;
     transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
     cursor: pointer;
 }
 
@@ -203,6 +205,49 @@ input, select, textarea{
     .movie-details-title{
         font-size: 2em;
     }
+}
+
+/* for watchlist */
+
+.watchlist{
+    border-top: 1px solid var(--primary-color);
+    margin-bottom: 25px;
+}
+
+.watchlist-item{
+    display: flex;
+    gap: 50px;
+    /* border-top: 1px solid var(--primary-color); */
+    border-bottom: 1px solid var(--primary-color);
+    padding: 20px 0px;
+}
+
+.watchlist-img{
+    width: 150px;
+}
+
+.clear-watchlist-container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.watchlist-btn{
+    font-size: var(--body-size);
+    background-color: var(--primary-color);
+    border: 0px;
+    border-radius: 5px;
+    color: var(--white);
+    padding: 0.5em 1em;
+    transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    cursor: pointer;
+}
+
+.watchlist-btn:hover{
+    transform: scale(1.1);
+    background-color: var(--primary-color-darker);
 }
 
 /* for navbar */
