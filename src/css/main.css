@@ -254,21 +254,26 @@ input, select, textarea{
 .navbar-container{
     padding: 10px 50px;
     border-bottom: 2px solid var(--secondary-color);
-    clear: both;
-    overflow: auto;
+    /* clear: both;
+    overflow: auto; */
 }
 
-.logo img{
+/* .logo img{
  float:left;
  margin-top: 1em;
+} */
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
- .navbar{
-float: right;
-}
-
-.navbar ul{
+.navbar-ul{
     list-style-type: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
 }
 
 .navbar-link, .navbar-link-btn{
