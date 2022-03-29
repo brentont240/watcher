@@ -29,7 +29,7 @@ export default class MovieCard {
             movie.name = item.title;
             movie.id = item._id;
             movie.genre = item.genre;
-            movie.desc = item.Desc;
+            movie.desc = item.description;
             movie.url = item.imageUrl;
             this.movieCardTemplate(movie);
         })
