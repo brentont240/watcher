@@ -133,7 +133,10 @@ h1,h2,h3,h4,h5,h6{
 .awesome-form-container
 {
 }
-
+.example{
+    color: #dc851f;
+    font-size:medium
+}
 
 .signup-container{
     display: flex;
