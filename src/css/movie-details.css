@@ -1,0 +1,26 @@
+.details-img{
+    width: 300px;
+}
+
+.details-box-shadow{
+  border-radius: 8px;
+  padding-left: 20px;
+  box-shadow: 0 0 10px 5px var(--primary-color);
+}
+
+/* for movie details page */
+@media screen and (max-width: 800px){
+  /* change the flex direction on smaller screens and add less top margin */
+  .row{
+      flex-direction: column;
+      margin-top: 10px;
+  }
+  /* add a top margin to the details box on smaller screens  */
+  .details-box{
+      margin-top: 20px;
+  }
+  /* make the font size smaller */
+  .movie-details-title{
+      font-size: 2em;
+  }
+}

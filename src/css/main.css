@@ -180,58 +180,6 @@ input, select, textarea{
     padding: 10px;
   }
 
-  .details-img{
-      width: 300px;
-  }
-
-  .details-box-shadow{
-    border-radius: 8px;
-    padding-left: 20px;
-    box-shadow: 0 0 10px 5px var(--primary-color);
-  }
-
-  /* for movie details page */
-  @media screen and (max-width: 800px){
-    /* change the flex direction on smaller screens and add less top margin */
-    .row{
-        flex-direction: column;
-        margin-top: 10px;
-    }
-    /* add a top margin to the details box on smaller screens  */
-    .details-box{
-        margin-top: 20px;
-    }
-    /* make the font size smaller */
-    .movie-details-title{
-        font-size: 2em;
-    }
-}
-
-/* for watchlist */
-
-.watchlist{
-    border-top: 1px solid var(--primary-color);
-    margin-bottom: 25px;
-}
-
-.watchlist-item{
-    display: flex;
-    gap: 50px;
-    /* border-top: 1px solid var(--primary-color); */
-    border-bottom: 1px solid var(--primary-color);
-    padding: 20px 0px;
-}
-
-.watchlist-img{
-    width: 150px;
-}
-
-.clear-watchlist-container{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 25px;
-}
-
 .watchlist-btn{
     font-size: var(--body-size);
     background-color: var(--primary-color);
@@ -254,18 +202,12 @@ input, select, textarea{
 .navbar-container{
     padding: 10px 50px;
     border-bottom: 2px solid var(--secondary-color);
-    /* clear: both;
-    overflow: auto; */
 }
-
-/* .logo img{
- float:left;
- margin-top: 1em;
-} */
 
 .navbar{
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
@@ -291,6 +233,83 @@ input, select, textarea{
     padding-top: 16px;
     padding-bottom: 16px;
   }
+
+.hamburger-menu{
+    display: none;
+    position: relative;
+    cursor: pointer;
+    width: 80px;
+    height: 80px;
+    transition: all .5s ease-in-out;
+}
+
+/* creating the hamburger button */
+/* menu button and animation from https://www.youtube.com/watch?v=dIyVTjJAkLw&ab_channel=codeSTACKr */
+.hamburger-menu-btn{
+    background-color: var(--primary-color);
+    width: 50px;
+    height: 6px;
+    border-radius: 5px;
+    border: 0px;
+    box-shadow: 0 2px 5px rgb(187, 10, 33, .2);
+    transition: all .5s ease-in-out;
+}
+
+.hamburger-menu-btn::before, 
+.hamburger-menu-btn::after{
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 6px;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    box-shadow: 0 2px 5px rgb(187, 10, 33, .2);
+    transition: all .5s ease-in-out;
+} 
+
+.hamburger-menu-btn::before{
+    transform: translateY(-16px);
+}
+
+.hamburger-menu-btn::after{
+    transform: translateY(16px);
+}
+
+/* Animating the hamburger button */
+.hamburger-menu.open .hamburger-menu-btn{
+    transform: translateX(-50px);
+    background: transparent;
+    box-shadow: none;
+}
+
+.hamburger-menu.open .hamburger-menu-btn::before{
+    transform: rotate(45deg) translate(35px, -35px);
+    background-color: var(--secondary-color);
+}
+
+.hamburger-menu.open .hamburger-menu-btn::after{
+    transform: rotate(-45deg) translate(35px, 35px);
+    background-color: var(--secondary-color);
+}
+
+/* for showing the hamburger menu on mobile */
+@media screen and (max-width: 900px){
+    .navbar-ul{
+        display: none;
+        width: 100%;
+        flex-direction: column;
+    }
+    /* show the navbar when clicked */
+    .navbar-ul.show{
+        display: flex;
+    }
+
+    .hamburger-menu{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
 
   /* for footer */
   .footer{

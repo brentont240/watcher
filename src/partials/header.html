@@ -1,9 +1,9 @@
 <div class="navbar-container">
-    <!-- TODO: add hamburger button for mobile -->
     <nav class="navbar">    
     <a href="index.html"><img src="../images/watcher-logo.png" alt="Wacher logo." height="75px" width="75px" class="logo"></a>
-
-        <ul class="navbar-ul">
+    <!-- TODO: make the hamburger button look better -->
+        <div class="hamburger-menu" id="hamburger-menu"><div class="hamburger-menu-btn"></div></div>
+        <ul class="navbar-ul" id="navbar-ul">
             <li><a href="index.html" class="navbar-link">Home</a></li>
             <li><a href="watchlist.html" class="navbar-link">Watchlist</a></li>
             <li><a href="signin.html" class="navbar-link">Login</a></li>
@@ -12,6 +12,7 @@
         </ul>
     </nav>
 </div>
+
 
 <!-- Note these pages should be visible to logged in users only: watchlist, logout (not a page, it will just log them out), add movie -->
 <!-- Note these pages should NOT be visible to logged in users: singup, signin-->
