@@ -14,7 +14,8 @@ function convertToJson(res) {
 export default class ExternalServices {
     constructor() {}
     async getData() {
-        let movie_data = await fetch("../dummy_movies.json").then(convertToJson).then((data) => data);
+        let movie_data = await fetch("https://film-watcher.herokuapp.com/movies").then(convertToJson).then((data) => data);
+        console.log(movie_data);
         movie.movieGenerator(movie_data);
     }
 

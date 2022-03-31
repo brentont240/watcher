@@ -1,0 +1,22 @@
+.watchlist{
+    border-top: 1px solid var(--primary-color);
+    margin-bottom: 25px;
+}
+
+.watchlist-item{
+    display: flex;
+    gap: 50px;
+    /* border-top: 1px solid var(--primary-color); */
+    border-bottom: 1px solid var(--primary-color);
+    padding: 20px 0px;
+}
+
+.watchlist-img{
+    width: 150px;
+}
+
+.clear-watchlist-container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
