@@ -13,7 +13,7 @@ function showView() {
       x.style.display = "block";
     }
   }
-function checkCredentials()
+function checkCredentials(e)
 {
   fetch('https://film-watcher.herokuapp.com/api-docs/#/visitor/logIn')
   .then(response => response.json())
@@ -47,7 +47,7 @@ function checkCredentials()
 
 }
 
-function checkPassword()
+function checkPassword(e)
 {
   let password = getElementById("typedPassword");
   let confirmedPassword = getElementById("typedPasswordConfirm");

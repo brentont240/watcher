@@ -26,21 +26,6 @@ export function renderWithTemplate(template, parent, data, callback) {
 
 // loads the header and the footer
 export async function loadHeaderFooter() {
-  var w = window.innerWidth;
-  let head = await loadTemplate("../partials/header.html");
-  if(w <= 600)
-  {
-    head = await loadTemplate("../partials/mobile-header.html");
-  }
-  else
-  {
-  }
-    const foot = await loadTemplate("../partials/footer.html");
-    const header = document.getElementById("main-header");
-    const footer = document.getElementById("main-footer");
-    renderWithTemplate(head, header);
-    renderWithTemplate(foot, footer);
-    document.querySelector(".year").innerHTML = new Date().getFullYear();
   const head = await loadTemplate("../partials/header.html");
   const foot = await loadTemplate("../partials/footer.html");
   const header = document.getElementById("main-header");
