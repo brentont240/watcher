@@ -25,10 +25,10 @@
         <div class="awesome-form-container">
           <input id = "email" type="text" placeholder="Email" name="email" required>
       
-          <input type="password" placeholder="Password" name="psw" required>
-          <input type="password" placeholder="Confirm Password" name="psw-repeat" required>
+          <input id = "typedPassword" type="password" placeholder="Password" name="psw" required>
+          <input id = "typedPasswordConfirm" type="password" placeholder="Confirm Password" name="psw-repeat" required>
         <div class="buttons">
-          <button class="blob-btn">
+          <button class="blob-btn" onclick="checkPassword()">
             Submit
             <span class="blob-btn__inner">
               <span class="blob-btn__blobs">
