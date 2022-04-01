@@ -130,9 +130,9 @@ h1,h2,h3,h4,h5,h6{
 .awesome-form button:hover {
     box-shadow: 0 0 10px 0 var(--primary-color-darker) inset, 0 0 10px 4px var(--primary-color-darker);
   }
-.awesome-form-container
+/* .awesome-form-container
 {
-}
+} */
 .example{
     color: #dc851f;
     font-size:medium
@@ -349,7 +349,6 @@ input, select, textarea{
     .hamburger-menu-btn::after{
         transform: translateY(14px);
     }
-
 }
 
   /* for footer */
