@@ -23,7 +23,7 @@ form.addEventListener("submit" , (e) => {
         body: JSON.stringify(json),
       };
 
-    fetch("https://film-watcher.herokuapp.com/#/user/addMovie", options);
+    fetch("https://film-watcher.herokuapp.com/user/addMovie", options);
     console.log(e)
 
 });
