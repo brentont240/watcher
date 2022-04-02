@@ -130,9 +130,9 @@ h1,h2,h3,h4,h5,h6{
 .awesome-form button:hover {
     box-shadow: 0 0 10px 0 var(--primary-color-darker) inset, 0 0 10px 4px var(--primary-color-darker);
   }
-.awesome-form-container
+/* .awesome-form-container
 {
-}
+} */
 .example{
     color: #dc851f;
     font-size:medium
@@ -207,6 +207,11 @@ input, select, textarea{
     border-bottom: 2px solid var(--secondary-color);
 }
 
+.logo{
+    width: 75px;
+    height: 75px;
+}
+
 .navbar{
     display: flex;
     align-items: center;
@@ -244,6 +249,8 @@ input, select, textarea{
     width: 80px;
     height: 80px;
     transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
 }
 
 /* creating the hamburger button */
@@ -256,6 +263,8 @@ input, select, textarea{
     border: 0px;
     box-shadow: 0 2px 5px rgb(187, 10, 33, .2);
     transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
 }
 
 .hamburger-menu-btn::before, 
@@ -268,6 +277,8 @@ input, select, textarea{
     background-color: var(--primary-color);
     box-shadow: 0 2px 5px rgb(187, 10, 33, .2);
     transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
 } 
 
 .hamburger-menu-btn::before{
@@ -295,7 +306,7 @@ input, select, textarea{
     background-color: var(--secondary-color);
 }
 
-/* for showing the hamburger menu on mobile */
+/* for showing the hamburger menu on smaller screens */
 @media screen and (max-width: 900px){
     .navbar-ul{
         display: none;
@@ -311,6 +322,32 @@ input, select, textarea{
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+}
+
+/* make the navbar look better on mobile (make things smaller) */
+@media screen and (max-width: 600px){
+    .navbar-container{
+        padding: 0px 30px;
+    }
+    .logo{
+        width: 60px;
+        height: 60px;
+    }
+    .hamburger-menu{
+        width: 50px;
+    }
+    .hamburger-menu-btn,
+    .hamburger-menu-btn::before,
+    .hamburger-menu-btn::after{
+        width: 40px;
+        height: 5px;
+    }
+    .hamburger-menu-btn::before{
+        transform: translateY(-14px);
+    }
+    .hamburger-menu-btn::after{
+        transform: translateY(14px);
     }
 }
 
