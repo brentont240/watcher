@@ -48,7 +48,7 @@ renderError(){
 
 renderUnauthorizedError(){
     return `<h2 class="center-text">Error: Unauthorized!</h2>
-    <p class="center-text">You must be logged in to use a watchlist. Please log in or create an account with the "sign up" button above.</p>
+    <p class="center-text">You must be logged in to use the watchlist feature. Please log in or create an account with the "sign up" button above.</p>
     `;
 }
 
