@@ -22,7 +22,7 @@ export default class movieDetails{
             <img src="${this.movie.imageUrl}" class="details-img" alt="Poster for ${this.movie.title}.">
           </div>
           <div class="column left-text details-box-shadow details-box">
-            <p class="rating">Rating: ${this.starRating} (Do we want to add this)</p>
+            <p class="rating">Rating: ${this.starRating}</p>
             <p class="description">${this.movie.description}</p>
             <button class="watchlist-btn add-watchlist" id="${this.movie._id}">&#9547; &nbsp;Add to Watchlist</button>
           </div>
@@ -39,12 +39,13 @@ export default class movieDetails{
 
     getStarRating(){
       // add full stars until you get to the rating
-      for (let i = 0; i < this.movie.Rate; i++) {
+      console.log(this.movie.starRating);
+      for (let i = 0; i < this.movie.starRating; i++) {
         this.starRating += "&#9733";
       }
       // add in blank stars to fill in the rest
-      if (this.movie.Rate != 5){
-        for (let i = this.movie.Rate; i < 5; i++) {
+      if (this.movie.starRating != 5){
+        for (let i = this.movie.starRating; i < 5; i++) {
           this.starRating += "&#9734;";
         }
       }
@@ -59,7 +60,7 @@ export default class movieDetails{
         response = await response.json();
         this.movie = response.movie;
       // TODO: do we want them to add a star rating system?!!!!!!
-       // this.getStarRating();
+        this.getStarRating();
         detailsBody.innerHTML = this.renderMovieDetails();
 
         // TODO: hide the watchlist button when a user is not logged in, or if the movie is in their watchlist!
