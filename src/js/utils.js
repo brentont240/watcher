@@ -101,7 +101,7 @@ Date.prototype.addHours= function(h){
 }
 
 async function chooseHeader(token){
-  if (token != ""){
+  if (token !== ""){
     return await loadTemplate("../partials/header-logged-in.html");
     
   } else {
