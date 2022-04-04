@@ -1,20 +1,19 @@
-import { loadHeaderFooter } from "./utils.js";
+import { loadHeaderFooter, createCookie } from "./utils.js";
 loadHeaderFooter();
 
-let form = document.querySelector("#signinButton")
+let form = document.querySelector("#signinButton");
 console.log("hello")
-form.addEventListener("submit", (e) =>{
-  console.log("hello")
+form.addEventListener("click", (e) =>{
+  e.preventDefault();
 
-e.preventDefault()
-let json = []
-json.name = document.getElementById("name").value
-json.email = document.getElementById("email").value
-json.password = document.getElementById("typedPassword").value
+  json.email = document.getElementById("email").value;
+  json.password = document.getElementById("password").value;
 
-let message = fetch("https://film-watcher.herokuapp.com/auth/login");
+loginUser(json.email, json.password);
+
+
 //   checkPassword()
-})
+});
 
 function checkCredentials()
 {
@@ -48,7 +47,7 @@ fetch('https://film-watcher.herokuapp.com/api-docs/#/auth/login')
 });
 
 
-}
+};
 
 function checkPassword()
 {
@@ -64,4 +63,20 @@ else
   errorMessage.innerText = "Passwords do not match!";
 
 }
+};
+
+async function loginUser(email, password){
+  const loginOptions = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({email: email, password: password})
+  }
+  const getLogin = await fetch("https://film-watcher.herokuapp.com/auth/login", loginOptions);
+  if (getLogin.ok) {
+  const token = await getLogin.json();
+  createCookie("token", token.token);
+  }
+  // do an error if there is an error
 }
