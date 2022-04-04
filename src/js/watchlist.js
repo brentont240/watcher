@@ -1,10 +1,11 @@
 // TODO: WORK ON JS TO IMPLEMENT THE WATCHLIST AND LOAD EVERYTHING IN
-
+import { getCookie } from "./utils.js";
 export default class watchlist{
 constructor(endpointBase, renderLocation) {
     this.endpointBase = endpointBase;
     this.movielist = [];
     this.renderLocation = renderLocation;
+    this.token = getCookie("token");
 }    
 
 renderWatchlist(){
@@ -64,15 +65,22 @@ clearWatchlistAlert(){
     // do this if ok is pressed
     if(clearlist){
         // clear the watchlist (need to call the api to do it)
-        const clearOptions = { method: "PUT"};
+        const clearOptions = { method: "PUT", 
+        headers: {
+            Authorization: `Bearer ${this.token}`
+        }};
         return fetch("https://film-watcher.herokuapp.com/movies/clear-watchlist", clearOptions);
     } 
 }
 
 async init(){
 // TODO: do something else if the watchlist is empty!
-
- let getWatchlist = await fetch(this.endpointBase+"watchlist");
+ let getWatchlistOptions = {
+    method: "GET",
+    headers: {
+        Authorization: `Bearer ${this.token}`
+    }};
+ let getWatchlist = await fetch(this.endpointBase+"watchlist", getWatchlistOptions);
  if(getWatchlist.ok){
     this.movielist = await getWatchlist.json();
     this.movielist = this.movielist.movies;
@@ -92,7 +100,10 @@ async init(){
         if (e.target.classList.contains("watchlist-remove")) {
           // gets the movie id, then makes a request to remove it from the watchlist
           let movieId = e.target.id;
-          const removeOptions = { method: "PUT"};
+          const removeOptions = { method: "PUT",    
+           headers: {
+            Authorization: `Bearer ${this.token}`
+        }};
           return fetch("https://film-watcher.herokuapp.com/movies/remove-from-watchlist/"+movieId, removeOptions);
         }
       });
