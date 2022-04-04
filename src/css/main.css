@@ -120,19 +120,6 @@ h1,h2,h3,h4,h5,h6{
 /* styled form button */
 .awesome-form button{
     width: 180px;
-    font-family: var(--font-body);
-    background: var(--white);
-    background: transparent;
-    border-bottom: 1px solid var(--white);
-    padding: 5px;
-    width: 100%;
-    font-size: 20px;
-    resize: vertical;
-    min-height: 100px;
-}
-.awesome-form button{
-    /* width: 15%; */
-    padding: 0px 30px;
 	height: 40px;
 	margin: 10px auto;
 	justify-content: center;
