@@ -60,7 +60,7 @@ renderEmptyWatchlist(){
 }
 
 // makes sure that the user wants to clear the whole watch list
-clearWatchlistAlert(){
+async clearWatchlistAlert(){
     let clearlist = confirm("Are you sure you want to clear the watchlist?\nNote: this action cannot be undone!");
     // do this if ok is pressed
     if(clearlist){
@@ -70,7 +70,7 @@ clearWatchlistAlert(){
         headers: {
             Authorization: `Bearer ${token}`
         }};
-        fetch("https://film-watcher.herokuapp.com/movies/watchlist", clearOptions);
+        await fetch("https://film-watcher.herokuapp.com/movies/watchlist", clearOptions);
         return location.reload();
     }
 }
@@ -95,7 +95,7 @@ async init(){
     document.querySelector("#clear-watchlist").addEventListener("click", this.clearWatchlistAlert);
     document
       .querySelector(".watchlist")  
-      .addEventListener("click", function (e) {
+      .addEventListener("click", async function (e) {
         if (e.target.classList.contains("watchlist-remove")) {
           // gets the movie id, then makes a request to remove it from the watchlist
           const token = getCookie("token");
@@ -104,7 +104,7 @@ async init(){
            headers: {
             Authorization: `Bearer ${token}`
         }};
-          fetch("https://film-watcher.herokuapp.com/movies/watchlist/"+movieId, removeOptions);
+          await fetch("https://film-watcher.herokuapp.com/movies/watchlist/"+movieId, removeOptions);
           return location.reload();
         }
       });
