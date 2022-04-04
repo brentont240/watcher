@@ -18,12 +18,13 @@ form.addEventListener("submit" , (e) => {
     const options = {
         method: "POST",
         headers: {
+          "Access-Control-Allow_Origin":  "https://brentont240.github.io/watcher/src/html/add-movie.html",
           "Content-Type": "application/json",
         },
         body: JSON.stringify(json),
       };
 
-    fetch("https://film-watcher.herokuapp.com/user/addMovie", options);
-    console.log(e)
+    let message = fetch("https://film-watcher.herokuapp.com/user/addMovie", options);
+    console.log(message);
 
 });
