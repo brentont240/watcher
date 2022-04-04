@@ -1,3 +1,5 @@
+import { getCookie } from "./utils.js";
+
 let form = document.querySelector("#add_form");
 form.addEventListener("submit" , (e) => {
     e.preventDefault();
@@ -7,27 +9,16 @@ form.addEventListener("submit" , (e) => {
     json.title = document.getElementById("title").value;
     json.yearPublished = document.getElementById("pub_year").value;
     json.rating = document.getElementById("rating").value;
-    json.minutes = document.getElementById("minute_slider").value;
+    json.minutes = document.getElementById("minute_slider").value + " min";
     json.genre = document.getElementById("movie_genre").value;
     json.imageUrl = document.getElementById("movie_img").value;
     json.description = document.getElementById("movie_desc").value;
     json.starRating = document.getElementById("starRating").value;
 
-    // console.log(json);
+    console.log(json);
 
-    const options = {
-        method: "POST",
-        headers: {
-          "Access-Control-Allow-Origin":  "https://brentont240.github.io/",
-          "Content-Type": "application/json",
-          Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hdGVvLmRvZGFAb3V0bG9vay5jb20iLCJ1c2VySWQiOiI2MjQyN2FhYWM4YTgzMTA5ZTBmZTQ0YmYiLCJpYXQiOjE2NDkxMDUwMTUsImV4cCI6MTY0OTEwODYxNX0.pB_HINj8rmGocSLQv_m7eHPqk-GMV0hmhMwXCFckWMw",
+    addMovie(json);
 
-        },
-        body: JSON.stringify(json),
-      };
-
-    let message = fetch("https://film-watcher.herokuapp.com/auth/addMovie", options);
-    console.log("fetch message", message);
 
 });
 
@@ -40,3 +31,29 @@ slider.oninput = function() {
   output.innerHTML = this.value;
 };
 
+async function addMovie(formInput){
+  const token = getCookie("token");
+
+  const options = {
+      method: "POST",
+      headers: {
+        // "Access-Control-Allow-Origin":  "https://brentont240.github.io/",
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+
+      },
+      body: JSON.stringify({
+        title: formInput.title,
+        yearPublished: formInput.yearPublished,
+        rating: formInput.rating,
+        minutes: formInput.minutes,
+        genre: formInput.genre,
+        imageUrl: formInput.imageUrl,
+        description: formInput.description,
+        starRating: formInput.starRating
+      }),
+    };
+
+  let postMovie = await fetch("https://film-watcher.herokuapp.com/movies/add-movie", options);
+  console.log("fetch message", postMovie);
+}

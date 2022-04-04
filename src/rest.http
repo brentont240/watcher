@@ -1,6 +1,6 @@
 @host = film-watcher.herokuapp.com
  @contentType = application/json
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hdGVvLmRvZGFAb3V0bG9vay5jb20iLCJ1c2VySWQiOiI2MjQyN2FhYWM4YTgzMTA5ZTBmZTQ0YmYiLCJpYXQiOjE2NDkwOTQxMjgsImV4cCI6MTY0OTA5NzcyOH0.K1VHj03yLid9lTHBXSEb7RiPFbWWHlnGlIvy4Kt-ilM
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hdGVvLmRvZGFAb3V0bG9vay5jb20iLCJ1c2VySWQiOiI2MjQyN2FhYWM4YTgzMTA5ZTBmZTQ0YmYiLCJpYXQiOjE2NDkxMDg3ODMsImV4cCI6MTY0OTExMjM4M30.XKZIeB9qDyXKiQvPUfoHRj7mvzEqhviOtEq1G13-e1k
  
 ###
 get http://{{host}}/
@@ -90,7 +90,7 @@ Authorization: Bearer {{token}}
  
 ###
 # DELETE MOVIE
-delete http://{{host}}/movies/delete-movie/624b28e43e8c458cc72662c8
+delete http://{{host}}/movies/delete-movie/624b6af9ae2fa68496907609
 Authorization: Bearer {{token}}
  
 ###

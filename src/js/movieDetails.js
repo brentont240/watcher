@@ -77,7 +77,7 @@ export default class movieDetails{
              headers: {
               Authorization: `Bearer ${this.token}`
           } };
-            return fetch("https://film-watcher.herokuapp.com/movies/add-to-watchlist/"+movieId, addOptions);
+            return fetch("https://allow-cors.herokuapp.com/https://film-watcher.herokuapp.com/movies/watchlist/"+movieId, addOptions);
           });
       }  else {
         // if there is a problem, alert the user!
