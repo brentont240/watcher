@@ -3,32 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/watcher-logo.png" />
+    <link rel="apple-touch-icon" href="../images/watcher-logo.png" />
     <link rel="stylesheet" href="../css/main.css">
     <title>Sign Up</title>
-    <script src="../js/main.js" type="module"></script>
+    <script src="../js/signup.js" type="module"></script>
 </head>
 <body>
-    <header>
-    <div class="signup-container">
-      <div class="signup">
-          <a href="index.html"><img src="../images/watcher-logo.png" alt="Wacher logo." id = "signup-logo"></a>
-      </div>
-      <!-- TODO: add hamburger button for mobile -->
-      <nav class="navbar">
-      </nav>
-  </div>
-  </header>
+  <header id="main-header"></header>
+  <main>
   <h1 id = "signup-header">
     Sign up for the best experience!
   </h1>
-    <form class = "awesome-form"action="action_page.php">
+    <form class = "awesome-form">
         <div class="awesome-form-container">
           <input id = "nameOfUser" type="text" placeholder="Name" name="name" required>
           <input id = "email" type="text" placeholder="Email" name="email" required>
-          <input id = "typedPassword" type="password" placeholder="Password" name="psw" required>
-          <input id = "typedPasswordConfirm" type="password" placeholder="Confirm Password" name="psw-repeat" required>
+          <input type="password" placeholder="Password" name="psw" required>
+          <input type="password" placeholder="Confirm Password" name="psw-repeat" required>
         <div class="buttons">
-          <button class="blob-btn" onclick="" >
+          <button id="blob-btn" type = "submit">
             Submit
             <span class="blob-btn__inner">
               <span class="blob-btn__blobs">
@@ -43,6 +37,7 @@
                   </div>
       </form>
     </div>
+  </main>
       <footer id="main-footer"></footer>
 </body>
 </html>
