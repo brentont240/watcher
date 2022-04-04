@@ -1,14 +1,19 @@
 <div class="navbar-container">
-    <div class="logo">
-        <a href="index.html"><img src="../images/watcher-logo.png" alt="Wacher logo." height="75px" width="75px"></a>
-    </div>
-    <!-- TODO: add hamburger button for mobile -->
-    <nav class="navbar">
-        <ul>
+    <nav class="navbar">    
+    <a href="index.html"><img src="../images/watcher-logo.png" alt="Wacher logo." class="logo"></a>
+    <!-- TODO: make the hamburger button look better -->
+        <div class="hamburger-menu" id="hamburger-menu"><div class="hamburger-menu-btn"></div></div>
+        <ul class="navbar-ul" id="navbar-ul">
             <li><a href="index.html" class="navbar-link">Home</a></li>
-            <li><a href="#" class="navbar-link">Login</a></li>
+            <li><a href="watchlist.html" class="navbar-link">Watchlist</a></li>
+            <li><a href="add-movie.html" class="navbar-link">Add Movie</a></li>
+            <li><a href="signin.html" class="navbar-link">Login</a></li>
             <!-- Add a logout link that is only visible to logged in users -->
-            <li><a href="signup.html"><button class="navbar-link-btn btn">Signup</button></a></li>
+            <li><a href="signup.html"><button class="navbar-link-btn btn">Sign up</button></a></li>
         </ul>
     </nav>
 </div>
+
+
+<!-- Note these pages should be visible to logged in users only: watchlist, logout (not a page, it will just log them out), add movie -->
+<!-- Note these pages should NOT be visible to logged in users: singup, signin-->

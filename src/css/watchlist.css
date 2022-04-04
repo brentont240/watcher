@@ -1,0 +1,48 @@
+.watchlist{
+    border-top: 1px solid var(--primary-color);
+    margin-bottom: 25px;
+}
+
+.watchlist-item{
+    display: flex;
+    gap: 50px;
+    /* border-top: 1px solid var(--primary-color); */
+    border-bottom: 1px solid var(--primary-color);
+    padding: 20px 0px;
+}
+
+.watchlist-img{
+    width: 150px;
+}
+
+.watchlist-movie-details{
+    font-size: 1rem;
+}
+
+.clear-watchlist-container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+/* TODO: make things look better on mobile */
+@media screen and (max-width: 600px){
+    .watchlist-movie-details{
+        font-size: .9rem;
+    }
+    .watchlist-item{
+        gap: 25px;
+    }
+    /* make it so it looks better, or even have different text on mobile! */
+    .watchlist-btn{
+        /* padding: 0.5em 1em; */
+        font-size: .85em;
+        padding: .5em .8em; 
+    }
+    
+    .watchlist-img{
+        max-width: 100px;
+        height: 100%;
+    }
+
+}

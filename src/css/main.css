@@ -57,6 +57,8 @@ h1,h2,h3,h4,h5,h6{
     color: var(--white);
     padding: 0.55em 1.5em;
     transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
     cursor: pointer;
 }
 
@@ -115,9 +117,20 @@ h1,h2,h3,h4,h5,h6{
     margin-left: 5%;
     margin-right: 5%;
 }
-/* styled form button */
+.awesome-form textarea{
+    font-family: var(--font-body);
+    background: var(--white);
+    background: transparent;
+    border-bottom: 1px solid var(--white);
+    padding: 5px;
+    width: 100%;
+    font-size: 20px;
+    resize: vertical;
+    min-height: 100px;
+}
 .awesome-form button{
-    width: 180px;
+    /* width: 15%; */
+    padding: 0px 30px;
 	height: 40px;
 	margin: 10px auto;
 	justify-content: center;
@@ -134,14 +147,13 @@ h1,h2,h3,h4,h5,h6{
 .awesome-form button:hover {
     box-shadow: 0 0 10px 0 var(--primary-color-darker) inset, 0 0 10px 4px var(--primary-color-darker);
   }
-/* .sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-  }
-  .sticky + .content {
-    padding-top: 60px;
-  } */
+/* .awesome-form-container
+{
+} */
+.example{
+    color: #dc851f;
+    font-size:medium
+}
 
 .signup-container{
     display: flex;
@@ -201,52 +213,47 @@ input, select, textarea{
     padding: 10px;
   }
 
-  .details-img{
-      width: 300px;
-  }
+.watchlist-btn{
+    font-size: var(--body-size);
+    background-color: var(--primary-color);
+    border: 0px;
+    border-radius: 5px;
+    color: var(--white);
+    padding: 0.5em 1em;
+    transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    cursor: pointer;
+}
 
-  .details-box-shadow{
-    border-radius: 8px;
-    padding-left: 20px;
-    box-shadow: 0 0 10px 5px var(--primary-color);
-  }
-
-  /* for movie details page */
-  @media screen and (max-width: 800px){
-    /* change the flex direction on smaller screens and add less top margin */
-    .row{
-        flex-direction: column;
-        margin-top: 10px;
-    }
-    /* add a top margin to the details box on smaller screens  */
-    .details-box{
-        margin-top: 20px;
-    }
-    /* make the font size smaller */
-    .movie-details-title{
-        font-size: 2em;
-    }
+.watchlist-btn:hover{
+    transform: scale(1.1);
+    background-color: var(--primary-color-darker);
 }
 
 /* for navbar */
 .navbar-container{
     padding: 10px 50px;
     border-bottom: 2px solid var(--secondary-color);
-    clear: both;
-    overflow: auto;
 }
 
-.logo img{
- float:left;
- margin-top: 1em;
+.logo{
+    width: 75px;
+    height: 75px;
 }
 
- .navbar{
-float: right;
+.navbar{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-.navbar ul{
+.navbar-ul{
     list-style-type: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
 }
 
 .navbar-link, .navbar-link-btn{
@@ -265,6 +272,118 @@ float: right;
     padding-bottom: 16px;
   }
 
+.hamburger-menu{
+    display: none;
+    position: relative;
+    cursor: pointer;
+    width: 80px;
+    height: 80px;
+    transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+}
+
+/* creating the hamburger button */
+/* menu button and animation from https://www.youtube.com/watch?v=dIyVTjJAkLw&ab_channel=codeSTACKr */
+.hamburger-menu-btn{
+    background-color: var(--primary-color);
+    width: 50px;
+    height: 6px;
+    border-radius: 5px;
+    border: 0px;
+    box-shadow: 0 2px 5px rgb(187, 10, 33, .2);
+    transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+}
+
+.hamburger-menu-btn::before, 
+.hamburger-menu-btn::after{
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 6px;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    box-shadow: 0 2px 5px rgb(187, 10, 33, .2);
+    transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+} 
+
+.hamburger-menu-btn::before{
+    transform: translateY(-16px);
+}
+
+.hamburger-menu-btn::after{
+    transform: translateY(16px);
+}
+
+/* Animating the hamburger button */
+.hamburger-menu.open .hamburger-menu-btn{
+    transform: translateX(-50px);
+    background: transparent;
+    box-shadow: none;
+}
+
+.hamburger-menu.open .hamburger-menu-btn::before{
+    transform: rotate(45deg) translate(35px, -35px);
+    background-color: var(--secondary-color);
+}
+
+.hamburger-menu.open .hamburger-menu-btn::after{
+    transform: rotate(-45deg) translate(35px, 35px);
+    background-color: var(--secondary-color);
+}
+
+/* for showing the hamburger menu on smaller screens */
+@media screen and (max-width: 900px){
+    .navbar-ul{
+        display: none;
+        width: 100%;
+        flex-direction: column;
+    }
+    /* show the navbar when clicked */
+    .navbar-ul.show{
+        display: flex;
+    }
+
+    .hamburger-menu{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* make the navbar look better on mobile (make things smaller) */
+@media screen and (max-width: 600px){
+    .navbar-container{
+        padding: 0px 30px;
+    }
+    .logo{
+        width: 60px;
+        height: 60px;
+    }
+    .hamburger-menu{
+        width: 50px;
+    }
+    .hamburger-menu-btn,
+    .hamburger-menu-btn::before,
+    .hamburger-menu-btn::after{
+        width: 40px;
+        height: 5px;
+    }
+
+    .hamburger-menu-btn::before{
+        transform: translateY(-14px);
+    }
+    
+    .hamburger-menu-btn::after{
+        transform: translateY(14px);
+    }
+
+}
+
   /* for footer */
   .footer{
       /* background-color: var(--primary-color); */
@@ -273,3 +392,50 @@ float: right;
       padding-bottom: .75em;
       padding-top: .75em;
   }
+
+.movie-card{
+ display: grid;
+ grid-template-columns: .5fr 1fr;
+ height: 170px;
+ width: 280px;
+ gap: 10px;
+ border: 5px solid #8f081a;
+ margin: 1em;
+ 
+}
+
+.movie-img{
+    grid-column: 1/2;
+    width: 100px;
+    margin: 5px;
+}
+a {
+    text-decoration: none;
+}
+.name{
+    color: white;
+}
+
+.name:hover{
+    color: #8f081a;
+}
+.movies{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    list-style-type: none;
+    margin-bottom: 30px;
+}
+.genre{
+    font-size: .8em;
+}
+.desc{
+    font-size: .7em;
+    max-height: 45px;
+    overflow: hidden;
+    /* text-overflow: ellipsis " [..]"; */
+}
+
+#add_form{
+    margin-bottom: 30px;
+}

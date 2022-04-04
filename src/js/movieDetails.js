@@ -1,42 +1,51 @@
 
 // TODO: add a way to add to list (aimilar to add to cart in the other thing)
 export default class movieDetails{
-    constructor(movieId, dataSource) {
+    constructor(movieId, endpointBase) {
         this.movieId = movieId;
         this.movie = {};
         this.starRating = "";
-        this.dataSource = dataSource;
+        this.endpointBase = endpointBase;
     }
 
     // look at ways to include more red into this!
     renderMovieDetails(){
-      // TODO: add a "add to watchlist" button if the user is logged in
+           // TODO: add a "add to watchlist" button if the user is logged in
       // something like this: <button class="btn">&#9547;  &nbsp;Add to Watchlist</button>
+      // TODO: only show this button if the user is logged in and if the movie is not in their watchlist
       return `<section class="movie-details center-text container">
-        <h1 class="movie-details-title">${this.movie.name}</h1>
+        <h1 class="movie-details-title">${this.movie.title}</h1>
         <hr class="hr-primary-fade">
-        <p>${this.movie.year} &#9474; ${this.movie.time} &#9474; ${this.movie.genre}</p>
+        <p>${this.movie.yearPublished} &#9474; ${this.movie.minutes} &#9474; ${this.movie.genre} &#9474; ${this.movie.rating}</p>
         <div class="row">
           <div class="column">
-            <img src="${this.movie.imgUrl}" class="details-img" alt="${this.movie.name}">
+            <img src="${this.movie.imageUrl}" class="details-img" alt="Poster for ${this.movie.title}.">
           </div>
           <div class="column left-text details-box-shadow details-box">
             <p class="rating">Rating: ${this.starRating}</p>
-            <p class="description">${this.movie.Desc}</p>
+            <p class="description">${this.movie.description}</p>
+            <button class="watchlist-btn add-watchlist" id="${this.movie._id}">&#9547; &nbsp;Add to Watchlist</button>
           </div>
         </div>
       </section>
       `;
     }
 
+    renderError(){
+      return `<h1 class="center-text">Error: No movie found!</h1>
+      <p class="center-text">Please go to a different page or try again.</p>
+      `
+    }
+
     getStarRating(){
       // add full stars until you get to the rating
-      for (let i = 0; i < this.movie.Rate; i++) {
+      console.log(this.movie.starRating);
+      for (let i = 0; i < this.movie.starRating; i++) {
         this.starRating += "&#9733";
       }
       // add in blank stars to fill in the rest
-      if (this.movie.Rate != 5){
-        for (let i = this.movie.Rate; i < 5; i++) {
+      if (this.movie.starRating != 5){
+        for (let i = this.movie.starRating; i < 5; i++) {
           this.starRating += "&#9734;";
         }
       }
@@ -44,21 +53,30 @@ export default class movieDetails{
 
     async init(){
       // TODO: use something like this to get the data
-      // this.movie = await this.dataSource.findMovieById(this.movieId);
+      const detailsBody = document.querySelector("main");
+      let response = await fetch(this.endpointBase+"details/"+this.movieId);
+      // if the response is ok, then render the page normally
+      if(response.ok){
+        response = await response.json();
+        this.movie = response.movie;
+      // TODO: do we want them to add a star rating system?!!!!!!
+        this.getStarRating();
+        detailsBody.innerHTML = this.renderMovieDetails();
 
-      // testing
-      this.movie = {
-        "id": "0",
-        "name": "Interstellar",
-        "imgUrl": "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
-        "Desc": "Best movie ever made",
-        "Rate": "5",
-        "year": "2014",
-        "time": "2hr 49min",
-        "genre": "Sci-Fi"
-      };
-      this.getStarRating();
-      document.querySelector("main").innerHTML = this.renderMovieDetails();
+        // TODO: hide the watchlist button when a user is not logged in, or if the movie is in their watchlist!
+        // TODO: or change the button to say in watchlist or something and make it orange and a checkmark and have it take them to watchlist
+
+        // add functionality to the add to watchlist buttons
+        document
+        .querySelector(".add-watchlist")
+        .addEventListener("click", function (e) {
+            let movieId = e.target.id;
+            const addOptions = { method: "POST"};
+            return fetch("https://film-watcher.herokuapp.com/movies/add-to-watchlist/"+movieId, addOptions);
+          });
+      }  else {
+        // if there is a problem, alert the user!
+        detailsBody.innerHTML = this.renderError();
+      }
     }
-
 }
