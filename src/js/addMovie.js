@@ -20,11 +20,13 @@ form.addEventListener("submit" , (e) => {
         headers: {
           "Access-Control-Allow-Origin":  "https://brentont240.github.io/",
           "Content-Type": "application/json",
+          // Authorization: 
+
         },
         body: JSON.stringify(json),
       };
 
-    let message = fetch("https://film-watcher.herokuapp.com/user/addMovie", options);
+    let message = fetch("https://film-watcher.herokuapp.com/auth/addMovie", options);
     console.log("fetch message", message);
 
 });
