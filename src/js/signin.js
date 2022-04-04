@@ -6,10 +6,11 @@ console.log("hello")
 form.addEventListener("click", (e) =>{
   e.preventDefault();
 
+  let json = [];
   json.email = document.getElementById("email").value;
   json.password = document.getElementById("password").value;
 
-loginUser(json.email, json.password);
+loginUser(json);
 
 
 //   checkPassword()
@@ -65,13 +66,13 @@ else
 }
 };
 
-async function loginUser(email, password){
+async function loginUser(userInfo){
   const loginOptions = {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({email: email, password: password})
+    body: JSON.stringify({email: userInfo.email, password: userInfo.password})
   }
   const getLogin = await fetch("https://film-watcher.herokuapp.com/auth/login", loginOptions);
   if (getLogin.ok) {
