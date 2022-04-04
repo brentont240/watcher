@@ -112,8 +112,20 @@ h1,h2,h3,h4,h5,h6{
     font-size: 20px;
     margin-bottom: 40px;
 }
+.awesome-form textarea{
+    font-family: var(--font-body);
+    background: var(--white);
+    background: transparent;
+    border-bottom: 1px solid var(--white);
+    padding: 5px;
+    width: 100%;
+    font-size: 20px;
+    resize: vertical;
+    min-height: 100px;
+}
 .awesome-form button{
-    width: 15%;
+    /* width: 15%; */
+    padding: 0px 30px;
 	height: 40px;
 	margin: 10px auto;
 	justify-content: center;
@@ -130,9 +142,9 @@ h1,h2,h3,h4,h5,h6{
 .awesome-form button:hover {
     box-shadow: 0 0 10px 0 var(--primary-color-darker) inset, 0 0 10px 4px var(--primary-color-darker);
   }
-.awesome-form-container
+/* .awesome-form-container
 {
-}
+} */
 .example{
     color: #dc851f;
     font-size:medium
