@@ -18,7 +18,7 @@ form.addEventListener("submit" , (e) => {
     const options = {
         method: "POST",
         headers: {
-          "Access-Control-Allow_Origin":  "https://brentont240.github.io",
+          "Access-Control-Allow-Origin":  "https://brentont240.github.io/",
           "Content-Type": "application/json",
         },
         body: JSON.stringify(json),
