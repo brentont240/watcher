@@ -11,22 +11,14 @@ let json = []
 json.name = document.getElementById("name").value
 json.email = document.getElementById("email").value
 json.password = document.getElementById("typedPassword").value
-const options = {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify(json),
-  };
 
-let message = fetch("https://film-watcher.herokuapp.com/auth/login", options);
+let message = fetch("https://film-watcher.herokuapp.com/auth/login");
 //   checkPassword()
-console.log(message)
 })
 
 function checkCredentials()
 {
-fetch('https://film-watcher.herokuapp.com/api-docs/#/visitor/logIn')
+fetch('https://film-watcher.herokuapp.com/api-docs/#/auth/login')
 .then(response => response.json())
 .then(json => {
   let username = json.username;
@@ -40,7 +32,7 @@ fetch('https://film-watcher.herokuapp.com/api-docs/#/visitor/logIn')
   }
   else if(enteredUsername == username && enteredPassword == password && isAdmin == false)
   {
-    
+
   }
   else
   {
