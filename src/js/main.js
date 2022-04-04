@@ -12,6 +12,3 @@ function showView() {
     }
   }
 
-var slider = document.getElementById("minute_slider");
-var output = document.getElementById("movie_length");
-output.innerHTML = slider.value; // Display the default slider value
