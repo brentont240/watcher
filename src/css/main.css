@@ -394,6 +394,7 @@ a {
     flex-flow: row wrap;
     justify-content: space-between;
     list-style-type: none;
+    margin-bottom: 30px;
 }
 .genre{
     font-size: .8em;
@@ -403,4 +404,8 @@ a {
     max-height: 45px;
     overflow: hidden;
     /* text-overflow: ellipsis " [..]"; */
+}
+
+#add_form{
+    margin-bottom: 30px;
 }
