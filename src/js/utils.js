@@ -51,3 +51,44 @@ export function getParams(param) {
   const params = urlParams.get(param);
   return params;
 }
+
+// functions for handling cookies 
+
+// creates a new cookie with an expiration of 1 hour from when it was created
+export function createCookie(cookieName, value){
+  const expiration = new Date().addHours(1);
+  console.log(expiration);
+  const cookieValue = cookieName+"="+value+";expires="+expiration.toUTCString()+";path=/";
+  document.cookie = cookieValue;
+}
+
+// deletes a cookie
+export function deleteCookie(cookieName){
+  // sets the expiration to an hour ago and then removes the value
+  const expiration = new Date().addHours(-1);
+  document.cookie = cookieName+"=; expires="+expiration.toUTCString()+";path=/;";
+}
+
+// retrieves the value of a cookie
+export function getCookie(cookieName){
+  // code from: https://www.w3schools.com/js/js_cookies.asp
+  let name = cookieName + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+// adds an hour to the date for the cookie expiration
+Date.prototype.addHours= function(h){
+  this.setHours(this.getHours()+h);
+  return this;
+}
