@@ -78,6 +78,7 @@ async function loginUser(userInfo){
   if (getLogin.ok) {
   const token = await getLogin.json();
   createCookie("token", token.token);
+  window.location.replace("index.html");
   }
   // do an error if there is an error
 }
