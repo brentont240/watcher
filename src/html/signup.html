@@ -7,7 +7,7 @@
     <link rel="apple-touch-icon" href="../images/watcher-logo.png" />
     <link rel="stylesheet" href="../css/main.css">
     <title>Sign Up</title>
-    <script src="../js/main.js" type="module"></script>
+    <script src="../js/signup.js" type="module"></script>
 </head>
 <body>
   <header id="main-header"></header>
@@ -15,13 +15,14 @@
   <h1 id = "signup-header">
     Sign up for the best experience!
   </h1>
-    <form class = "awesome-form"action="action_page.php">
+    <form class = "awesome-form">
         <div class="awesome-form-container">
+          <input id = "nameOfUser" type="text" placeholder="Name" name="name" required>
           <input id = "email" type="text" placeholder="Email" name="email" required>
           <input type="password" placeholder="Password" name="psw" required>
           <input type="password" placeholder="Confirm Password" name="psw-repeat" required>
         <div class="buttons">
-          <button class="blob-btn">
+          <button id="blob-btn" type = "submit">
             Submit
             <span class="blob-btn__inner">
               <span class="blob-btn__blobs">

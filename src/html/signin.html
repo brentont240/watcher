@@ -6,8 +6,8 @@
     <link rel="icon" href="../images/watcher-logo.png" />
     <link rel="apple-touch-icon" href="../images/watcher-logo.png" />
     <link rel="stylesheet" href="../css/main.css">
-    <title>Log In</title>
-    <script src="../js/main.js" type="module"></script>
+    <title>Sign In</title>
+    <script src="../js/signin.js" type="module"></script>
 </head>
 <body>
   <header id="main-header"></header>
@@ -15,13 +15,13 @@
   <h1 id = "signup-header">
     Log in!
   </h1>
-    <form class = "awesome-form"action="action_page.php">
+    <form class = "awesome-form">
         <div class="awesome-form-container">
           <input id = "email" type="text" placeholder="Email" name="email" required>
       
-          <input type="password" placeholder="Password" name="psw" required>
+          <input id = "password" type="password" placeholder="Password" name="psw" required>
         <div class="buttons">
-          <button class="blob-btn">
+          <button id="signinButton" type="submit">
             Log in
             <span class="blob-btn__inner">
               <span class="blob-btn__blobs">
