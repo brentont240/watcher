@@ -87,7 +87,7 @@ export function getCookie(cookieName){
   return "";
 }
 
-// adds an hour to the date for the cookie expiration
+// adds hours (depending on h) to the date for the cookie expiration
 Date.prototype.addHours= function(h){
   this.setHours(this.getHours()+h);
   return this;
