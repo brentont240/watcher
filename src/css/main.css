@@ -117,20 +117,9 @@ h1,h2,h3,h4,h5,h6{
     margin-left: 5%;
     margin-right: 5%;
 }
-.awesome-form textarea{
-    font-family: var(--font-body);
-    background: var(--white);
-    background: transparent;
-    border-bottom: 1px solid var(--white);
-    padding: 5px;
-    width: 100%;
-    font-size: 20px;
-    resize: vertical;
-    min-height: 100px;
-}
+/* styled form button */
 .awesome-form button{
-    /* width: 15%; */
-    padding: 0px 30px;
+    width: 180px;
 	height: 40px;
 	margin: 10px auto;
 	justify-content: center;

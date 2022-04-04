@@ -1,11 +1,13 @@
 
-// TODO: add a way to add to list (similar to add to cart in the other thing)
+// TODO: add a way to add to list (aimilar to add to cart in the other thing)
+import { getCookie } from "./utils.js";
 export default class movieDetails{
     constructor(movieId, endpointBase) {
         this.movieId = movieId;
         this.movie = {};
         this.starRating = "";
         this.endpointBase = endpointBase;
+        this.token = getCookie("token");
     }
 
     // look at ways to include more red into this!
@@ -71,7 +73,10 @@ export default class movieDetails{
         .querySelector(".add-watchlist")
         .addEventListener("click", function (e) {
             let movieId = e.target.id;
-            const addOptions = { method: "POST"};
+            const addOptions = { method: "POST", 
+             headers: {
+              Authorization: `Bearer ${this.token}`
+          } };
             return fetch("https://film-watcher.herokuapp.com/movies/add-to-watchlist/"+movieId, addOptions);
           });
       }  else {

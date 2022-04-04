@@ -12,4 +12,3 @@ function showView() {
       x.style.display = "block";
     }
   }
-
