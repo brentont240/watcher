@@ -7,7 +7,7 @@
     <link rel="apple-touch-icon" href="../images/watcher-logo.png" />
     <link rel="stylesheet" href="../css/main.css">
     <title>Sign In</title>
-    <script src="../js/main.js" type="module"></script>
+    <script src="../js/signin.js" type="module"></script>
 </head>
 <body>
   <header id="main-header"></header>
@@ -21,7 +21,7 @@
       
           <input id = "password" type="password" placeholder="Password" name="psw" required>
         <div class="buttons">
-          <button class="blob-btn" onclick="checkCredentials()">
+          <button id="signinButton" type="submit">
             Log in
             <span class="blob-btn__inner">
               <span class="blob-btn__blobs">

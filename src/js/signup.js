@@ -1,9 +1,8 @@
 
 import { loadHeaderFooter } from "./utils.js";
-
 loadHeaderFooter();
   let form = document.querySelector("#blob-btn")
-
+  console.log("hello")
   form.addEventListener("submit", (e) =>{
     console.log("hello")
 
@@ -20,7 +19,7 @@ loadHeaderFooter();
     body: JSON.stringify(json),
     };
 
-  let message = fetch("https://film-watcher.herokuapp.com/signup", options);
+  let message = fetch("https://film-watcher.herokuapp.com/auth/signup", options);
 //   checkPassword()
   console.log(message)
 })
