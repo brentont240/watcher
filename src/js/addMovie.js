@@ -20,7 +20,7 @@ form.addEventListener("submit" , (e) => {
         headers: {
           "Access-Control-Allow-Origin":  "https://brentont240.github.io/",
           "Content-Type": "application/json",
-          // Authorization: 
+          Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hdGVvLmRvZGFAb3V0bG9vay5jb20iLCJ1c2VySWQiOiI2MjQyN2FhYWM4YTgzMTA5ZTBmZTQ0YmYiLCJpYXQiOjE2NDkxMDUwMTUsImV4cCI6MTY0OTEwODYxNX0.pB_HINj8rmGocSLQv_m7eHPqk-GMV0hmhMwXCFckWMw",
 
         },
         body: JSON.stringify(json),
