@@ -1,6 +1,7 @@
 
 import { loadHeaderFooter } from "./utils.js";
 loadHeaderFooter();
+checkPassword();
   let form = document.querySelector("#blob-btn")
   console.log("hello")
   form.addEventListener("submit", (e) =>{
@@ -19,57 +20,17 @@ loadHeaderFooter();
     body: JSON.stringify(json),
     };
 
-  let message = fetch("https://film-watcher.herokuapp.com/auth/signup", options);
-//   checkPassword()
-  console.log(message)
 })
-
-function checkCredentials()
-{
-  fetch('https://film-watcher.herokuapp.com/api-docs/#/visitor/logIn')
-  .then(response => response.json())
-  .then(json => {
-    let username = json.username;
-    let password = json.password;
-    let isAdmin = json.isAdmin;
-    let enteredUsername = getElementById("email").value;
-    let enteredPassword = getElementById("password").value;
-    if(enteredUsername == username && enteredPassword == password && isAdmin == true)
-    {
-
-    }
-    else if(enteredUsername == username && enteredPassword == password && isAdmin == false)
-    {
-
-    }
-    else
-    {
-      let failedLogin = document.createElement("h3");
-      failedLogin.innerText("Incorrect username or password!");
-      
-    }
-    {
-
-    }
-
-    
-  });
-  
-
-}
 
 function checkPassword()
 {
   let password = getElementById("typedPassword");
   let confirmedPassword = getElementById("typedPasswordConfirm");
-  if(password == confirmedPassword)
+  if(password != confirmedPassword)
   {
-
+    alert("Passwords do not match!")
   }
   else
   {
-    errorMessage = document.createElement("h3");
-    errorMessage.innerText = "Passwords do not match!";
-
   }
 }

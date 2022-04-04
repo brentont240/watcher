@@ -79,5 +79,8 @@ async function loginUser(userInfo){
   const token = await getLogin.json();
   createCookie("token", token.token);
   }
-  // do an error if there is an error
+  else
+  {
+    alert("Invalid username or password!")
+  }
 }
