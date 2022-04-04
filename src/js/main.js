@@ -13,7 +13,24 @@ function showView() {
       x.style.display = "block";
     }
   }
-function checkCredentials(e)
+function sendData()
+{
+  let json = []
+  json.name = document.getElementById("name").value
+  json.email = document.getElementById("email").value
+  json.password = document.getElementById("typedPassword").value
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(json),
+    };
+
+  fetch("https://film-watcher.herokuapp.com/signup", options);
+  checkPassword()
+  }
+function checkCredentials()
 {
   fetch('https://film-watcher.herokuapp.com/api-docs/#/visitor/logIn')
   .then(response => response.json())
@@ -47,7 +64,7 @@ function checkCredentials(e)
 
 }
 
-function checkPassword(e)
+function checkPassword()
 {
   let password = getElementById("typedPassword");
   let confirmedPassword = getElementById("typedPasswordConfirm");
