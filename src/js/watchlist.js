@@ -65,12 +65,14 @@ clearWatchlistAlert(){
     // do this if ok is pressed
     if(clearlist){
         // clear the watchlist (need to call the api to do it)
-        const clearOptions = { method: "PUT", 
+        const token = getCookie("token");
+        const clearOptions = { method: "DELETE", 
         headers: {
-            Authorization: `Bearer ${this.token}`
+            Authorization: `Bearer ${token}`
         }};
-        return fetch("https://film-watcher.herokuapp.com/movies/clear-watchlist", clearOptions);
-    } 
+        fetch("https://film-watcher.herokuapp.com/movies/watchlist", clearOptions);
+        return location.reload();
+    }
 }
 
 async init(){
@@ -86,10 +88,7 @@ async init(){
     this.movielist = this.movielist.movies;
 
     // if the watchlist is empty, then tell the user it is empty
-    if(!this.movielist || this.movielist.length === 0){
-        this.renderLocation.innerHTML = this.renderEmptyWatchlist();
-        return;
-    }
+
 
     console.log(this.movielist);
     this.renderWatchlist();
@@ -99,15 +98,21 @@ async init(){
       .addEventListener("click", function (e) {
         if (e.target.classList.contains("watchlist-remove")) {
           // gets the movie id, then makes a request to remove it from the watchlist
+          const token = getCookie("token");
           let movieId = e.target.id;
-          const removeOptions = { method: "PUT",    
+          const removeOptions = { method: "DELETE",    
            headers: {
-            Authorization: `Bearer ${this.token}`
+            Authorization: `Bearer ${token}`
         }};
-          return fetch("https://film-watcher.herokuapp.com/movies/remove-from-watchlist/"+movieId, removeOptions);
+          fetch("https://film-watcher.herokuapp.com/movies/watchlist/"+movieId, removeOptions);
+          return location.reload();
         }
       });
- }  else if (getWatchlist.status === 401){
+ }  else if (!this.movielist || this.movielist.length === 0){
+    this.renderLocation.innerHTML = this.renderEmptyWatchlist();
+    return;
+}
+ else if (getWatchlist.status === 401){
     this.renderLocation.innerHTML = this.renderUnauthorizedError();
  } else {
     this.renderLocation.innerHTML = this.renderError();

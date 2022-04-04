@@ -7,7 +7,6 @@ export default class movieDetails{
         this.movie = {};
         this.starRating = "";
         this.endpointBase = endpointBase;
-        this.token = getCookie("token");
     }
 
     // look at ways to include more red into this!
@@ -73,11 +72,12 @@ export default class movieDetails{
         .querySelector(".add-watchlist")
         .addEventListener("click", function (e) {
             let movieId = e.target.id;
+            const token = getCookie("token");
             const addOptions = { method: "POST", 
              headers: {
-              Authorization: `Bearer ${this.token}`
+              Authorization: `Bearer ${token}`
           } };
-            return fetch("https://allow-cors.herokuapp.com/https://film-watcher.herokuapp.com/movies/watchlist/"+movieId, addOptions);
+            return fetch("https://film-watcher.herokuapp.com/movies/watchlist/"+movieId, addOptions);
           });
       }  else {
         // if there is a problem, alert the user!

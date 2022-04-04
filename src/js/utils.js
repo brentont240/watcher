@@ -26,11 +26,12 @@ export function renderWithTemplate(template, parent, data, callback) {
 
 // loads the header and the footer
 export async function loadHeaderFooter() {
-  const head = await loadTemplate("../partials/header.html");
+  const token = getCookie("token");
+  const head = await chooseHeader(token);
   const foot = await loadTemplate("../partials/footer.html");
   const header = document.getElementById("main-header");
   const footer = document.getElementById("main-footer");
-
+  
   // render the header and footer
   renderWithTemplate(head, header);
   renderWithTemplate(foot, footer);
@@ -41,6 +42,12 @@ export async function loadHeaderFooter() {
     navUl.classList.toggle("show");
     hamburgerMenu.classList.toggle("open");
   });
+
+  if(token != ""){
+    document.querySelector("#logout").addEventListener("click", () => {
+      logoutUser(token);
+    })
+  }
   // add the current year to the copyright year in the footer
   document.querySelector(".year").innerHTML = new Date().getFullYear();
 }
@@ -91,4 +98,28 @@ export function getCookie(cookieName){
 Date.prototype.addHours= function(h){
   this.setHours(this.getHours()+h);
   return this;
+}
+
+async function chooseHeader(token){
+  if (token != ""){
+    return await loadTemplate("../partials/header-logged-in.html");
+    
+  } else {
+    return await loadTemplate("../partials/header.html");
+  }
+}
+
+async function logoutUser(token){
+
+  const logoutOptions = {
+    method: "PUT",
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  }
+  const logout = await fetch("https://film-watcher.herokuapp.com/auth/logout/", logoutOptions);
+  if (logout.ok) {
+  deleteCookie("token");
+  window.location.replace("index.html");
+}
 }
