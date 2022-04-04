@@ -13,7 +13,7 @@ form.addEventListener("submit" , (e) => {
     json.description = document.getElementById("movie_desc").value;
     json.starRating = document.getElementById("starRating").value;
 
-    console.log(json);
+    // console.log(json);
 
     const options = {
         method: "POST",
@@ -25,6 +25,6 @@ form.addEventListener("submit" , (e) => {
       };
 
     let message = fetch("https://film-watcher.herokuapp.com/user/addMovie", options);
-    console.log(message);
+    console.log("fetch message", message);
 
 });
