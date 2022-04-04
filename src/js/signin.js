@@ -80,5 +80,8 @@ async function loginUser(userInfo){
   createCookie("token", token.token);
   window.location.replace("index.html");
   }
-  // do an error if there is an error
+  else
+  {
+    alert("Invalid username or password!")
+  }
 }
