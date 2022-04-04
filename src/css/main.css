@@ -117,7 +117,9 @@ h1,h2,h3,h4,h5,h6{
     margin-left: 5%;
     margin-right: 5%;
 }
-.awesome-form textarea{
+/* styled form button */
+.awesome-form button{
+    width: 180px;
     font-family: var(--font-body);
     background: var(--white);
     background: transparent;
@@ -186,6 +188,7 @@ input, select, textarea{
 }
 
 @media screen and (max-width: 600px){
+    
     /* add less padding on mobile screens */
     .container{
         padding: 0px 20px;
@@ -403,6 +406,7 @@ input, select, textarea{
  margin: 1em;
  
 }
+
 
 .movie-img{
     grid-column: 1/2;

@@ -1,5 +1,5 @@
 
-// TODO: add a way to add to list (aimilar to add to cart in the other thing)
+// TODO: add a way to add to list (similar to add to cart in the other thing)
 export default class movieDetails{
     constructor(movieId, endpointBase) {
         this.movieId = movieId;
