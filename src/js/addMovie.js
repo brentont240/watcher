@@ -13,17 +13,30 @@ form.addEventListener("submit" , (e) => {
     json.description = document.getElementById("movie_desc").value;
     json.starRating = document.getElementById("starRating").value;
 
-    console.log(json);
+    // console.log(json);
 
     const options = {
         method: "POST",
         headers: {
+          "Access-Control-Allow-Origin":  "https://brentont240.github.io/",
           "Content-Type": "application/json",
+          // Authorization: 
+
         },
         body: JSON.stringify(json),
       };
 
-    fetch("https://film-watcher.herokuapp.com/user/addMovie", options);
-    console.log(e)
+    let message = fetch("https://film-watcher.herokuapp.com/auth/addMovie", options);
+    console.log("fetch message", message);
 
 });
+
+var slider = document.getElementById("minute_slider");
+var output = document.getElementById("movie_length");
+output.innerHTML = slider.value; // Display the default slider value
+
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function() {
+  output.innerHTML = this.value;
+};
+
