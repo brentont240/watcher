@@ -237,13 +237,6 @@ input, select, textarea{
     background-color: var(--primary-color-darker);
 }
 
-/* .in-watchlist{
-    background-color: var(--secondary-color);
-}
-
-.in-watchlist:hover{
-    background-color: var(--secondary-color-darker);
-} */
 
 /* for navbar */
 .navbar-container{
@@ -426,6 +419,7 @@ input, select, textarea{
 .movie-img{
     grid-column: 1/2;
     width: 100px;
+    height: 150px;
     margin: 5px;
 }
 a {
