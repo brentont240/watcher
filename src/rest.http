@@ -78,19 +78,19 @@ Content-Type: {{contentType}}
 Authorization: Bearer {{token}}
  
 {
- "title": "Captain America: The Winter Soldier",
- "yearPublished": "2014",
+ "title": "Jurrasic Park",
+ "yearPublished": "1993",
  "rating": "PG-13",
- "minutes": "136 min",
- "genre": "Action",
- "imageUrl": "newdvdreleasedates.com/images/posters/full/captain-america-the-winter-soldier-2014-11.jpg",
- "description": "As Steve Rogers struggles to embrace his role in the modern world, he teams up with a fellow Avenger and S.H.I.E.L.D agent, Black Widow, to battle a new threat from history: an assassin known as the Winter Soldier.",
+ "minutes": "127 min",
+ "genre": "Adventure",
+ "imageUrl": "https://upload.wikimedia.org/wikipedia/en/e/e7/Jurassic_Park_poster.jpg",
+ "description": "A paleontologist touring an almost complete theme park on an island in Central America is tasked with protecting a couple of kids after a power failure causes the park's cloned dinosaurs to run loose.",
  "starRating": "5"
 }
  
 ###
 # DELETE MOVIE
-delete http://{{host}}/movies/delete-movie/624b6af9ae2fa68496907609
+delete http://{{host}}/movies/delete-movie/624b87b6ae2fa684969078be
 Authorization: Bearer {{token}}
  
 ###

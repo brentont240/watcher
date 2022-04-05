@@ -1,4 +1,4 @@
-import { getCookie } from "./utils.js";
+import { getCookie, alertMessage } from "./utils.js";
 
 let form = document.querySelector("#add_form");
 form.addEventListener("submit" , (e) => {
@@ -54,6 +54,13 @@ async function addMovie(formInput){
       }),
     };
 
-  let postMovie = await fetch("https://film-watcher.herokuapp.com/movies/add-movie", options);
-  console.log("fetch message", postMovie);
+  let postMovie = await fetch("https://allow-cors.herokuapp.com/https://film-watcher.herokuapp.com/movies/add-movie", options);
+  if(postMovie.ok){
+    window.location.replace("index.html");
+  } else if(postMovie.status === 500){
+    alertMessage("You must be logged in to add a movie.","#add_form");
+  } else {
+    alertMessage("Error with adding movie.","#add_form");
+  }
+  // work on what happens
 }

@@ -16,6 +16,11 @@
     background-color: var(--secondary-color-darker);
 }
 
+.watchlist-btn{
+    margin-bottom: 20px;
+
+}
+
 
 /* for movie details page */
 @media screen and (max-width: 800px){

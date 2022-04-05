@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/watcher-logo.png" />
+    <link rel="apple-touch-icon" href="../images/watcher-logo.png" />
+    <link rel="stylesheet" href="../css/main.css">
+    <title>Add Movie</title>
+    <script src="../js/admin.js" type="module"></script>
+    <script src="../js/main.js" type="module"></script>
+</head>
+<body>
+        <header id="main-header"></header>
+  <main>
+  <h1 id = "signup-header">
+    Update Movie
+  </h1>
+    <form class = "awesome-form" id="update_form" name="update_form">
+        <div class="awesome-form-container">
+            <label for="title">Movie Id:   <span class="example">8b622e693...</span></label>
+            <input type="text" id="_id" name="movieid" required>
+            <label for="title">Movie Title:   <span class="example">e.g. Interstellar</span></label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="pub_year">Year Published:   <span class="example">e.g. 2014</span></label>
+            <input type="text" id="pub_year" name="pub_year" required>
+
+            <select id="rating">
+                <option>G</option>
+                <option>PG</option>
+                <option>PG-13</option>
+                <option>R</option>
+                <option>NR</option>
+            </select><span class="example">   e.g. PG-13</span><br><br><br>
+
+            <label for="starRating">Rating between 0 and 5:   <span class="example">e.g. 5</span></label>
+            <input type="text" id="starRating" name="starRating" required>
+
+            <label for="minutes">Movie length in Minutes: <span id="movie_length"></span></label>
+            <input type="range" min="0" max="240" step="1" value="" id="minute_slider" required>
+
+            <label for="movie_genre">Movie Genre:   <span class="example">e.g. Sci-Fi/Adventure</span></label>
+            <input type="text" id="movie_genre" name="movie_genre" required>
+
+            <label for="movie_img">Movie Image Url:   <span class="example">e.g. https://....</span></label>
+            <input type="url" id="movie_img" name="movie_img" required>
+
+            <label for="movie_desc">Movie Description:   <span class="example">e.g. A futuristic world where space travel is our only hope to survive.</span></label><br><br>
+            <textarea rows="6" cols="70" id="movie_desc" name="movie_desc" form="awesome-form" placeholder="Enter movie Description here..." required></textarea>
+
+            <button type="submit" id="update_button">Update Movie</button>
+      </form>
+      <hr class="hr-primary-fade">
+    </div>
+    <div>
+    <h1 class="center-text">Delete Movie</h1>
+    <form class = "awesome-form" id="delete_form" name="delete_form">
+        <label for="title">Movie Id:   <span class="example">8b622e693...</span></label>
+        <input type="text" id="delete-id" name="movieid" required>
+        <button type="submit" id="delete_button">Delete Movie</button>
+    </form>
+    </div>
+  </main>
+      <footer id="main-footer"></footer>
+</body>
+</html>

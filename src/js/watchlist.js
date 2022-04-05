@@ -24,7 +24,7 @@ this.movielist.forEach( movie => {
     <div>
         <h3>${movie.title}</h3>
         <p class="watchlist-movie-details">${movie.yearPublished} &#9474; ${movie.minutes} &#9474; ${movie.genre} &#9474; ${movie.rating}</p>
-        <p><small>${movie.description.substring(0,50)}...</small></p>
+        <p><small>${movie.description.substring(0,50)}...<a href="movie-details.html?movieId=${movie._id}" class="read-more">read more</a></small></p>
         <button class="watchlist-btn watchlist-remove" id="${movie._id}">&#9472; &nbsp;Remove from list</button>
     </div>      
 </div>
